@@ -2,7 +2,7 @@
 
 public class CreateArticleDto
 {
-    public string AuthorId { get; set; } = string.Empty;
+    public Guid AuthorId { get; set; }
     public int CategoryId { get; set; }
     public string ImageUrl { get; set; } = string.Empty;
     public List<int> TagIds { get; set; } = new();

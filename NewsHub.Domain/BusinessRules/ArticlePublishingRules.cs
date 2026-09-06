@@ -15,7 +15,7 @@ public static class ArticlePublishingRules
     
     private static bool HasImageUrl(Article article) => !string.IsNullOrWhiteSpace(article.ImageUrl);
     
-    private static bool HasAuthor(Article article) => !string.IsNullOrWhiteSpace(article.AuthorId);
+    private static bool HasAuthor(Article article) => article.AuthorId != Guid.Empty;
     
     private static bool HasCategory(Article article) => article.CategoryId > 0;
 }

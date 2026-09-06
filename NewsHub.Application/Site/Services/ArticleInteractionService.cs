@@ -13,13 +13,15 @@ public class ArticleInteractionService : IArticleInteractionService
     private readonly IArticleRepository _articles;
     private readonly IArticleRatingRepository _ratingRepository;
     private readonly ICommentRepository _comments;
+    private readonly IUserService _userService;
 
     public ArticleInteractionService(IArticleRepository articles, IArticleRatingRepository ratingRepository,
-        ICommentRepository comment)
+        ICommentRepository comment , IUserService userService)
     {
         _articles = articles;
         _ratingRepository = ratingRepository;
         _comments = comment;
+        _userService = userService;
     }
 
     public async Task<CommentDto> AddCommentAsync(CommentDto dto)
@@ -27,12 +29,14 @@ public class ArticleInteractionService : IArticleInteractionService
         if (!await _articles.ExistsAsync(dto.ArticleId))
             throw new NotFoundException(nameof(Article), dto.ArticleId);
         
+        if (!await _userService.IsExistsAsync(dto.UserId))
+            throw new NotFoundException("User not found");
 
         var comment = new Comment
         {
             ArticleId = dto.ArticleId,
             UserId = dto.UserId,
-            Content = dto.Content.Trim(),
+            Content = dto.Content?.Trim() ?? string.Empty,
             CreatedAt = DateTime.UtcNow,
             Status = CommentStatus.Pending
         };

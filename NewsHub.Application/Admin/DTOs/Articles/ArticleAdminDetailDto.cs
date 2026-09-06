@@ -5,7 +5,7 @@ namespace NewsHub.Application.Admin.DTOs.Articles;
 public class ArticleAdminDetailDto
 {
     public int Id { get; set; }
-    public string AuthorId { get; set; } = string.Empty;
+    public Guid AuthorId { get; set; }
     public int CategoryId { get; set; }
     public ArticleStatus Status { get; set; }
     public bool IsTrending { get; set; }

@@ -1,12 +1,13 @@
-﻿using NewsHub.Domain.Enums;
+﻿using NewsHub.Domain.Common;
+using NewsHub.Domain.Enums;
 
 namespace NewsHub.Domain.Entities;
 
-public class Article
+public class Article : ICreationAuditable , IModificationAuditable
 {
     public int Id { get; set; }
     
-    public string AuthorId { get; set; } = string.Empty;
+    public Guid AuthorId { get; set; }
     
     public int CategoryId { get; set; }
 

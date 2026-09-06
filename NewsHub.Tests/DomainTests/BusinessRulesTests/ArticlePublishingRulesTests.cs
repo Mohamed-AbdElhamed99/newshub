@@ -14,7 +14,7 @@ public class ArticlePublishingRulesTests
         var article = new Article
         {
             CategoryId = 1,
-            AuthorId = "long-uuid",
+            AuthorId = Guid.NewGuid(),
             ImageUrl = "image.jpg",
             Status = ArticleStatus.Submitted,
             Translations = new List<ArticleTranslation>
@@ -34,7 +34,7 @@ public class ArticlePublishingRulesTests
         var article = new Article
         {
             CategoryId = 1,
-            AuthorId = "long-uuid",
+            AuthorId = Guid.NewGuid(),
             ImageUrl = "image.jpg",
             Status = ArticleStatus.Submitted,
             Translations = new List<ArticleTranslation>
@@ -53,7 +53,7 @@ public class ArticlePublishingRulesTests
     {
         var article = new Article
         {
-            AuthorId = "long-uuid",
+            AuthorId = Guid.NewGuid(),
             ImageUrl = "image.jpg",
             Status = ArticleStatus.Submitted,
             Translations = new List<ArticleTranslation>
@@ -94,7 +94,7 @@ public class ArticlePublishingRulesTests
         var article = new Article
         {
             CategoryId = 1,
-            AuthorId = "long-uuid",
+            AuthorId = Guid.NewGuid(),
             Status = ArticleStatus.Submitted,
             Translations = new List<ArticleTranslation>
             {
@@ -114,7 +114,7 @@ public class ArticlePublishingRulesTests
         var article = new Article
         {
             CategoryId = 1,
-            AuthorId = "long-uuid",
+            AuthorId = Guid.NewGuid(),
             ImageUrl = "image.jpg",
             Status = ArticleStatus.Submitted,
             Translations = new List<ArticleTranslation>

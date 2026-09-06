@@ -1,6 +1,6 @@
 ﻿namespace NewsHub.Domain.Entities;
 
-public class TagTranslation
+public class TagTranslation 
 {
     public int Id { get; set; }
     public int TagId { get; set; }

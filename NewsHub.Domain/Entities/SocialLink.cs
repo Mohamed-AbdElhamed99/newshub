@@ -1,6 +1,8 @@
-﻿namespace NewsHub.Domain.Entities;
+﻿using NewsHub.Domain.Common;
 
-public class SocialLink
+namespace NewsHub.Domain.Entities;
+
+public class SocialLink  : ICreationAuditable , IModificationAuditable
 {
     public int Id { get; set; }
 

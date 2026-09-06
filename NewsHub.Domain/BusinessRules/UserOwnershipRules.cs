@@ -4,11 +4,11 @@ namespace NewsHub.Domain.BusinessRules;
 
 public static class UserOwnershipRules
 {
-    public static bool IsUserOwnArticle(Article article, string userId)
+    public static bool IsUserOwnArticle(Article article, Guid userId)
     {
         if (article == null) return false;
-        if (string.IsNullOrWhiteSpace(article.AuthorId)) return false;
-        if (string.IsNullOrWhiteSpace(userId)) return false;
+        if (article.AuthorId == Guid.Empty) return false;
+        if (userId == Guid.Empty) return false;
 
         return article.AuthorId == userId;
     }

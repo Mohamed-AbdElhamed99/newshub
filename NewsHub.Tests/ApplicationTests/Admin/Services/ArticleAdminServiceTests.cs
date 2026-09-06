@@ -29,7 +29,7 @@ public class ArticleAdminServiceTests
         //Arrange
         var dto = new CreateArticleDto
         {
-            AuthorId = "author-1",
+            AuthorId = Guid.NewGuid(),
             CategoryId = 3,
             ImageUrl = "test.jpg",
             TagIds = new List<int> { 1, 2 },
@@ -55,7 +55,7 @@ public class ArticleAdminServiceTests
         //Arrange
         var dto = new CreateArticleDto
         {
-            AuthorId = "author-1",
+            AuthorId = Guid.NewGuid(),
             CategoryId = 3,
             ImageUrl = "test.jpg",
             Translations = new List<ArticleTranslationDto>
@@ -78,7 +78,7 @@ public class ArticleAdminServiceTests
         Article? capturedArticle = null;
         var dto = new CreateArticleDto
         {
-            AuthorId = "author-42",
+            AuthorId = Guid.NewGuid(),
             CategoryId = 7,
             ImageUrl = "/images/sports.png",
             TagIds = new List<int> { 1 },
@@ -113,7 +113,7 @@ public class ArticleAdminServiceTests
         Article? capturedArticle = null;
         var dto = new CreateArticleDto
         {
-            AuthorId = "author-1",
+            AuthorId = Guid.NewGuid(),
             CategoryId = 1,
             Translations = new List<ArticleTranslationDto>
             {
@@ -139,7 +139,7 @@ public class ArticleAdminServiceTests
         // Arrange
         var dto = new CreateArticleDto
         {
-            AuthorId = "author-1",
+            AuthorId = Guid.NewGuid(),
             CategoryId = 1,
             Translations = new List<ArticleTranslationDto>
             {
@@ -163,7 +163,7 @@ public class ArticleAdminServiceTests
         // Arrange
         var dto = new CreateArticleDto
         {
-            AuthorId = "author-1",
+            AuthorId = Guid.NewGuid(),
             CategoryId = 1,
             TagIds = new List<int>(),
             Translations = new List<ArticleTranslationDto>
@@ -186,7 +186,7 @@ public class ArticleAdminServiceTests
         // Arrange
         var dto = new CreateArticleDto
         {
-            AuthorId = "author-1",
+            AuthorId = Guid.NewGuid(),
             CategoryId = 1,
             TagIds = new List<int> { 4, 9 },
             Translations = new List<ArticleTranslationDto>
@@ -215,7 +215,7 @@ public class ArticleAdminServiceTests
         var article = new Article
         {
             Id = 1,
-            AuthorId = "author-1",
+            AuthorId = Guid.NewGuid(),
             CategoryId = 3,
             ImageUrl = "/images/tech.png",
             Tags = new List<ArticleTag> { new() { TagId = 1 }, new() { TagId = 2 } },

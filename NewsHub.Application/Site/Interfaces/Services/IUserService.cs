@@ -7,4 +7,5 @@ public interface IUserService
 {
     Task<UserDto> RegisterAsync(RegisterDto dto);
     Task<AuthResult> LoginAsync(LoginDto dto);
+    Task<bool> IsExistsAsync(Guid userId);
 }

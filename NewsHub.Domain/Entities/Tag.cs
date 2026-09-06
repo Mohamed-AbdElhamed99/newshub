@@ -1,6 +1,8 @@
-﻿namespace NewsHub.Domain.Entities;
+﻿using NewsHub.Domain.Common;
 
-public class Tag
+namespace NewsHub.Domain.Entities;
+
+public class Tag  : ICreationAuditable , IModificationAuditable
 {
     public int Id { get; set; }
     public ICollection<TagTranslation> Translations { get; set; } = new List<TagTranslation>();

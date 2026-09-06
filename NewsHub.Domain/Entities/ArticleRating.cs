@@ -1,6 +1,8 @@
-﻿namespace NewsHub.Domain.Entities;
+﻿using NewsHub.Domain.Common;
 
-public class ArticleRating
+namespace NewsHub.Domain.Entities;
+
+public class ArticleRating  : ICreationAuditable , IModificationAuditable
 {
     public int Id { get; set; }
     

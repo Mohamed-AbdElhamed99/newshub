@@ -1,6 +1,8 @@
-﻿namespace NewsHub.Domain.Entities;
+﻿using NewsHub.Domain.Common;
 
-public class SiteSetting
+namespace NewsHub.Domain.Entities;
+
+public class SiteSetting : IModificationAuditable
 {
     public int Id { get; set; }
 

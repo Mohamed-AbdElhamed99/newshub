@@ -1,6 +1,8 @@
-﻿namespace NewsHub.Domain.Entities;
+﻿using NewsHub.Domain.Common;
 
-public class Subscription
+namespace NewsHub.Domain.Entities;
+
+public class Subscription  : ICreationAuditable
 {
     public int Id { get; set; }
     public string Email { get; set; } = string.Empty;

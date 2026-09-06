@@ -1,8 +1,9 @@
-﻿using NewsHub.Domain.Enums;
+﻿using NewsHub.Domain.Common;
+using NewsHub.Domain.Enums;
 
 namespace NewsHub.Domain.Entities;
 
-public class Comment
+public class Comment  : ICreationAuditable , IModificationAuditable
 {
     public int Id { get; set; }
     public int ArticleId { get; set; }

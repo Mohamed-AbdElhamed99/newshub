@@ -1012,7 +1012,8 @@
       "NewsHub.Web/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity.UI": "10.0.11",
-          "NewsHub.Application": "1.0.0"
+          "NewsHub.Application": "1.0.0",
+          "NewsHub.Infrastructure": "1.0.0"
         },
         "runtime": {
           "NewsHub.Web.dll": {

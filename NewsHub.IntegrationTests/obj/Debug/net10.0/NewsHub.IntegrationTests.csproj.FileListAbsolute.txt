@@ -182,3 +182,4 @@ D:\C#\1\NewsHub\NewsHub\NewsHub.IntegrationTests\obj\Debug\net10.0\NewsHub.Integ
 D:\C#\1\NewsHub\NewsHub\NewsHub.IntegrationTests\obj\Debug\net10.0\NewsHub.IntegrationTests.genruntimeconfig.cache
 D:\C#\1\NewsHub\NewsHub\NewsHub.IntegrationTests\obj\Debug\net10.0\ref\NewsHub.IntegrationTests.dll
 D:\C#\1\NewsHub\NewsHub\NewsHub.IntegrationTests\bin\Debug\net10.0\FluentValidation.dll
+D:\C#\1\NewsHub\NewsHub\NewsHub.IntegrationTests\obj\Debug\net10.0\NewsHub.IntegrationTests.sourcelink.json

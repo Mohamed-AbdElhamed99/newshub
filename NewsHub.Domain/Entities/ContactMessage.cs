@@ -1,6 +1,8 @@
-﻿namespace NewsHub.Domain.Entities;
+﻿using NewsHub.Domain.Common;
 
-public class ContactMessage
+namespace NewsHub.Domain.Entities;
+
+public class ContactMessage : ICreationAuditable
 {
     public int Id { get; set; }
     public string Name { get; set; } = string.Empty;
