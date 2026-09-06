@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "DDMdVQvCJBg=",
+  "dgSpecHash": "hbQcuk6ehAE=",
   "success": true,
-  "projectFilePath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Web\\NewsHub.Web.csproj",
+  "projectFilePath": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Web/NewsHub.Web.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Computer Home\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
-    "C:\\Users\\Computer Home\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\10.0.11\\microsoft.aspnetcore.identity.ui.10.0.11.nupkg.sha512",
-    "C:\\Users\\Computer Home\\.nuget\\packages\\microsoft.extensions.fileproviders.embedded\\10.0.11\\microsoft.extensions.fileproviders.embedded.10.0.11.nupkg.sha512"
+    "/home/mohamedabdlehamed/.nuget/packages/fluentvalidation/12.1.1/fluentvalidation.12.1.1.nupkg.sha512",
+    "/home/mohamedabdlehamed/.nuget/packages/microsoft.aspnetcore.identity.ui/10.0.11/microsoft.aspnetcore.identity.ui.10.0.11.nupkg.sha512",
+    "/home/mohamedabdlehamed/.nuget/packages/microsoft.extensions.fileproviders.embedded/10.0.11/microsoft.extensions.fileproviders.embedded.10.0.11.nupkg.sha512"
   ],
   "logs": []
 }

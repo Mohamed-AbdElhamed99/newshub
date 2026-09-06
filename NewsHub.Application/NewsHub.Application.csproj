@@ -5,12 +5,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Site\DTOs\" />
-    <Folder Include="Site\Interfaces\" />
-    <Folder Include="Site\Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FluentValidation" Version="12.1.1" />
   </ItemGroup>
 

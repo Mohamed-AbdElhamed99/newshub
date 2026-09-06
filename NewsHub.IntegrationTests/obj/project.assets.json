@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 3,
   "targets": {
     "net10.0": {
       "Azure.Core/1.50.0": {
@@ -3416,24 +3416,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Computer Home\\.nuget\\packages\\": {}
+    "/home/mohamedabdlehamed/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.IntegrationTests\\NewsHub.IntegrationTests.csproj",
+      "projectUniqueName": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.IntegrationTests/NewsHub.IntegrationTests.csproj",
       "projectName": "NewsHub.IntegrationTests",
-      "projectPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.IntegrationTests\\NewsHub.IntegrationTests.csproj",
-      "packagesPath": "C:\\Users\\Computer Home\\.nuget\\packages\\",
-      "outputPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.IntegrationTests\\obj\\",
+      "projectPath": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.IntegrationTests/NewsHub.IntegrationTests.csproj",
+      "packagesPath": "/home/mohamedabdlehamed/.nuget/packages/",
+      "outputPath": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.IntegrationTests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Computer Home\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/mohamedabdlehamed/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
+        "/usr/lib64/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3441,17 +3442,17 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Application\\NewsHub.Application.csproj": {
-              "projectPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Application\\NewsHub.Application.csproj"
+            "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Application/NewsHub.Application.csproj": {
+              "projectPath": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Application/NewsHub.Application.csproj"
             },
-            "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Domain\\NewsHub.Domain.csproj": {
-              "projectPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Domain\\NewsHub.Domain.csproj"
+            "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Domain/NewsHub.Domain.csproj": {
+              "projectPath": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Domain/NewsHub.Domain.csproj"
             },
-            "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Infrastructure\\NewsHub.Infrastructure.csproj": {
-              "projectPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Infrastructure\\NewsHub.Infrastructure.csproj"
+            "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Infrastructure/NewsHub.Infrastructure.csproj": {
+              "projectPath": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Infrastructure/NewsHub.Infrastructure.csproj"
             },
-            "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Web\\NewsHub.Web.csproj": {
-              "projectPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Web\\NewsHub.Web.csproj"
+            "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Web/NewsHub.Web.csproj": {
+              "projectPath": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Web/NewsHub.Web.csproj"
             }
           }
         }
@@ -3466,7 +3467,7 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.300"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net10.0": {
@@ -3506,7 +3507,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/10.0.111/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
