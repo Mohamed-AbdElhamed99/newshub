@@ -13,3 +13,4 @@ D:\C#\1\NewsHub\NewsHub\NewsHub.Application\obj\Debug\net10.0\NewsHub.Applicatio
 D:\C#\1\NewsHub\NewsHub\NewsHub.Application\obj\Debug\net10.0\refint\NewsHub.Application.dll
 D:\C#\1\NewsHub\NewsHub\NewsHub.Application\obj\Debug\net10.0\NewsHub.Application.pdb
 D:\C#\1\NewsHub\NewsHub\NewsHub.Application\obj\Debug\net10.0\ref\NewsHub.Application.dll
+D:\C#\1\NewsHub\NewsHub\NewsHub.Application\obj\Debug\net10.0\NewsHub.Application.sourcelink.json

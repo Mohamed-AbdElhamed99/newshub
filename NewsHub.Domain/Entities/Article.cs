@@ -27,6 +27,8 @@ public class Article
     public ICollection<ArticleTag> Tags { get; set; } = new List<ArticleTag>();
     
     public ICollection<ArticleTranslation> Translations { get; set; } = new List<ArticleTranslation>();
+    public ICollection<Comment> Comments { get; set; } = new List<Comment>();
+    public ICollection<ArticleRating> Ratings { get; set; } = new List<ArticleRating>();
 
     public void MarkAsPublished()
     {

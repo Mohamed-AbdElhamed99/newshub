@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NewsHub.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+709c6d8c2714202e69ebe9efe000c05d9d7d771c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+078141c0e6190913fa966b6bc1da65a46c7bcefc")]
 [assembly: System.Reflection.AssemblyProductAttribute("NewsHub.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NewsHub.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

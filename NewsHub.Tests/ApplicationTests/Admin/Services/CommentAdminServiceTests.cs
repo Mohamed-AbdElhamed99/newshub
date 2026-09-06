@@ -28,7 +28,7 @@ public class CommentAdminServiceTests
         // Arrange
         var comments = new List<Comment>
         {
-            new() { Id = 1, ArticleId = 3, UserId = "user-1", Content = "Nice", Status = CommentStatus.Pending }
+            new() { Id = 1, ArticleId = 3, UserId = Guid.NewGuid(), Content = "Nice", Status = CommentStatus.Pending }
         };
 
         var filter = new CommentFilter { Page = 2, PageSize = 5 };
@@ -69,11 +69,13 @@ public class CommentAdminServiceTests
     [Fact]
     public async Task GetCommentsAsync_MultipleComments_MapsEachToCorrectDto()
     {
+        var userId1 = Guid.NewGuid();
+        var userId2 = Guid.NewGuid();
         // Arrange
         var comments = new List<Comment>
         {
-            new() { Id = 1, ArticleId = 3, UserId = "user-1", Content = "First", Status = CommentStatus.Pending },
-            new() { Id = 2, ArticleId = 3, UserId = "user-2", Content = "Second", Status = CommentStatus.Approved }
+            new() { Id = 1, ArticleId = 3, UserId = userId1, Content = "First", Status = CommentStatus.Pending },
+            new() { Id = 2, ArticleId = 3, UserId = userId2, Content = "Second", Status = CommentStatus.Approved }
         };
 
         var filter = new CommentFilter { Page = 1, PageSize = 10 };

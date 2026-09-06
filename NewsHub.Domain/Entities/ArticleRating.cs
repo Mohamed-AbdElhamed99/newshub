@@ -6,7 +6,7 @@ public class ArticleRating
     
     public int ArticleId { get; set; }
     
-    public string UserId { get; set; } =  string.Empty;
+    public Guid UserId { get; set; }
     
     public int Rating { get; set; } = 0;
     

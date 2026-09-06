@@ -1,12 +1,11 @@
-namespace NewsHub.Application.Site.DTOs;
+﻿namespace NewsHub.Application.Site.DTOs.Articles;
 
-public class TopStoryDto
+public class PopularArticleDto
 {
     public int Id { get; set; }
     public string Title { get; set; } = string.Empty;
-    public string? Excerpt { get; set; }
     public string ImageUrl { get; set; } = string.Empty;
-    public int ViewCount { get; set; }
+    public double AverageRating { get; set; }
     public string Slug { get; set; } = string.Empty;
     public string LanguageCode { get; set; } = string.Empty;
 }

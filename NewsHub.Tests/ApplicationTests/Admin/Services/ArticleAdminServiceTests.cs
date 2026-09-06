@@ -14,7 +14,7 @@ public class ArticleAdminServiceTests
     private readonly ArticleAdminService _service;
 
     public ArticleAdminServiceTests()
-    {
+    {   
         _mockArticleRepository = new Mock<IArticleRepository>();
         _service = new ArticleAdminService(_mockArticleRepository.Object);
     }

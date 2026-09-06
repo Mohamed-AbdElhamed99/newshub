@@ -1,26 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Web/NewsHub.Web.csproj": {}
+    "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Web\\NewsHub.Web.csproj": {}
   },
   "projects": {
-    "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Application/NewsHub.Application.csproj": {
+    "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Application\\NewsHub.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Application/NewsHub.Application.csproj",
+        "projectUniqueName": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Application\\NewsHub.Application.csproj",
         "projectName": "NewsHub.Application",
-        "projectPath": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Application/NewsHub.Application.csproj",
-        "packagesPath": "/home/mohamedabdlehamed/.nuget/packages/",
-        "outputPath": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Application/obj/",
+        "projectPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Application\\NewsHub.Application.csproj",
+        "packagesPath": "C:\\Users\\Computer Home\\.nuget\\packages\\",
+        "outputPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/mohamedabdlehamed/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Computer Home\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "/usr/lib64/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -28,8 +27,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Domain/NewsHub.Domain.csproj": {
-                "projectPath": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Domain/NewsHub.Domain.csproj"
+              "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Domain\\NewsHub.Domain.csproj": {
+                "projectPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Domain\\NewsHub.Domain.csproj"
               }
             }
           }
@@ -44,7 +43,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
@@ -72,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/10.0.111/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -350,23 +349,22 @@
         }
       }
     },
-    "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Domain/NewsHub.Domain.csproj": {
+    "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Domain\\NewsHub.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Domain/NewsHub.Domain.csproj",
+        "projectUniqueName": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Domain\\NewsHub.Domain.csproj",
         "projectName": "NewsHub.Domain",
-        "projectPath": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Domain/NewsHub.Domain.csproj",
-        "packagesPath": "/home/mohamedabdlehamed/.nuget/packages/",
-        "outputPath": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Domain/obj/",
+        "projectPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Domain\\NewsHub.Domain.csproj",
+        "packagesPath": "C:\\Users\\Computer Home\\.nuget\\packages\\",
+        "outputPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/mohamedabdlehamed/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Computer Home\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "/usr/lib64/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -386,7 +384,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
@@ -408,7 +406,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/10.0.111/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -686,23 +684,22 @@
         }
       }
     },
-    "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Web/NewsHub.Web.csproj": {
+    "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Web\\NewsHub.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Web/NewsHub.Web.csproj",
+        "projectUniqueName": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Web\\NewsHub.Web.csproj",
         "projectName": "NewsHub.Web",
-        "projectPath": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Web/NewsHub.Web.csproj",
-        "packagesPath": "/home/mohamedabdlehamed/.nuget/packages/",
-        "outputPath": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Web/obj/",
+        "projectPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Web\\NewsHub.Web.csproj",
+        "packagesPath": "C:\\Users\\Computer Home\\.nuget\\packages\\",
+        "outputPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/mohamedabdlehamed/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Computer Home\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "/usr/lib64/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -710,8 +707,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Application/NewsHub.Application.csproj": {
-                "projectPath": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Application/NewsHub.Application.csproj"
+              "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Application\\NewsHub.Application.csproj": {
+                "projectPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Application\\NewsHub.Application.csproj"
               }
             }
           }
@@ -726,7 +723,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
@@ -757,7 +754,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/10.0.111/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

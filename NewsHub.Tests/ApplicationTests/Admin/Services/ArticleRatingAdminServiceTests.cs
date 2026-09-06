@@ -27,7 +27,7 @@ public class ArticleRatingAdminServiceTests
         // Arrange
         var ratings = new List<ArticleRating>
         {
-            new() { Id = 1, ArticleId = 3, UserId = "user-1", Rating = 5 }
+            new() { Id = 1, ArticleId = 3, UserId = Guid.NewGuid(), Rating = 5 }
         };
 
         var filter = new ArticleRatingFilter { Page = 2, PageSize = 5 };
@@ -68,11 +68,13 @@ public class ArticleRatingAdminServiceTests
     [Fact]
     public async Task GetRatingsAsync_MultipleRatings_MapsEachToCorrectDto()
     {
+        var userId1 = Guid.NewGuid();
+        var userId2 = Guid.NewGuid();
         // Arrange
         var ratings = new List<ArticleRating>
         {
-            new() { Id = 1, ArticleId = 3, UserId = "user-1", Rating = 5 },
-            new() { Id = 2, ArticleId = 3, UserId = "user-2", Rating = 2 }
+            new() { Id = 1, ArticleId = 3, UserId = userId1, Rating = 5 },
+            new() { Id = 2, ArticleId = 3, UserId = userId2, Rating = 2 }
         };
 
         var filter = new ArticleRatingFilter { Page = 1, PageSize = 10 };

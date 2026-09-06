@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net10.0": {
       "FluentValidation/12.1.1": {
@@ -267,25 +267,24 @@
     ]
   },
   "packageFolders": {
-    "/home/mohamedabdlehamed/.nuget/packages/": {}
+    "C:\\Users\\Computer Home\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Web/NewsHub.Web.csproj",
+      "projectUniqueName": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Web\\NewsHub.Web.csproj",
       "projectName": "NewsHub.Web",
-      "projectPath": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Web/NewsHub.Web.csproj",
-      "packagesPath": "/home/mohamedabdlehamed/.nuget/packages/",
-      "outputPath": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Web/obj/",
+      "projectPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Web\\NewsHub.Web.csproj",
+      "packagesPath": "C:\\Users\\Computer Home\\.nuget\\packages\\",
+      "outputPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/mohamedabdlehamed/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Computer Home\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
-        "/usr/lib64/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -293,8 +292,8 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Application/NewsHub.Application.csproj": {
-              "projectPath": "/home/mohamedabdlehamed/Projects/DotNet/NewsHub/NewsHub.Application/NewsHub.Application.csproj"
+            "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Application\\NewsHub.Application.csproj": {
+              "projectPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Application\\NewsHub.Application.csproj"
             }
           }
         }
@@ -309,7 +308,7 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
       "net10.0": {
@@ -340,7 +339,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/10.0.111/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
