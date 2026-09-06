@@ -1,0 +1,17 @@
+D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\bin\Debug\net10.0\NewsHub.Infrastructure.deps.json
+D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\bin\Debug\net10.0\NewsHub.Infrastructure.runtimeconfig.json
+D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\bin\Debug\net10.0\NewsHub.Infrastructure.dll
+D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\bin\Debug\net10.0\NewsHub.Infrastructure.pdb
+D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\bin\Debug\net10.0\NewsHub.Domain.dll
+D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\bin\Debug\net10.0\NewsHub.Domain.pdb
+D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\obj\Debug\net10.0\NewsHub.Infrastructure.csproj.AssemblyReference.cache
+D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\obj\Debug\net10.0\NewsHub.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\obj\Debug\net10.0\NewsHub.Infrastructure.AssemblyInfoInputs.cache
+D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\obj\Debug\net10.0\NewsHub.Infrastructure.AssemblyInfo.cs
+D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\obj\Debug\net10.0\NewsHub.Infrastructure.csproj.CoreCompileInputs.cache
+D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\obj\Debug\net10.0\NewsHub..B6DB713A.Up2Date
+D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\obj\Debug\net10.0\NewsHub.Infrastructure.dll
+D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\obj\Debug\net10.0\refint\NewsHub.Infrastructure.dll
+D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\obj\Debug\net10.0\NewsHub.Infrastructure.pdb
+D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\obj\Debug\net10.0\NewsHub.Infrastructure.genruntimeconfig.cache
+D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\obj\Debug\net10.0\ref\NewsHub.Infrastructure.dll

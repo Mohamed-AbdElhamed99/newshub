@@ -1,0 +1,11 @@
+D:\C#\1\NewsHub\NewsHub\NewsHub.Domain\bin\Debug\net10.0\NewsHub.Domain.deps.json
+D:\C#\1\NewsHub\NewsHub\NewsHub.Domain\bin\Debug\net10.0\NewsHub.Domain.dll
+D:\C#\1\NewsHub\NewsHub\NewsHub.Domain\bin\Debug\net10.0\NewsHub.Domain.pdb
+D:\C#\1\NewsHub\NewsHub\NewsHub.Domain\obj\Debug\net10.0\NewsHub.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\1\NewsHub\NewsHub\NewsHub.Domain\obj\Debug\net10.0\NewsHub.Domain.AssemblyInfoInputs.cache
+D:\C#\1\NewsHub\NewsHub\NewsHub.Domain\obj\Debug\net10.0\NewsHub.Domain.AssemblyInfo.cs
+D:\C#\1\NewsHub\NewsHub\NewsHub.Domain\obj\Debug\net10.0\NewsHub.Domain.csproj.CoreCompileInputs.cache
+D:\C#\1\NewsHub\NewsHub\NewsHub.Domain\obj\Debug\net10.0\NewsHub.Domain.dll
+D:\C#\1\NewsHub\NewsHub\NewsHub.Domain\obj\Debug\net10.0\refint\NewsHub.Domain.dll
+D:\C#\1\NewsHub\NewsHub\NewsHub.Domain\obj\Debug\net10.0\NewsHub.Domain.pdb
+D:\C#\1\NewsHub\NewsHub\NewsHub.Domain\obj\Debug\net10.0\ref\NewsHub.Domain.dll

@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="NewsHub.Application/NewsHub.Application.csproj" />
+  <Project Path="NewsHub.Domain/NewsHub.Domain.csproj" />
+  <Project Path="NewsHub.Infrastructure/NewsHub.Infrastructure.csproj" />
+  <Project Path="NewsHub.IntegrationTests/NewsHub.IntegrationTests.csproj" />
+  <Project Path="NewsHub.Tests/NewsHub.Tests.csproj" />
+  <Project Path="NewsHub.Web/NewsHub.Web.csproj" />
+</Solution>

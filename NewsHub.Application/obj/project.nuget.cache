@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "X1hZxSRbHE0=",
+  "success": true,
+  "projectFilePath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Application\\NewsHub.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Computer Home\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}

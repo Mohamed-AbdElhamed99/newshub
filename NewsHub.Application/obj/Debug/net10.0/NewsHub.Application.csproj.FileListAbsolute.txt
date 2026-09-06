@@ -1,0 +1,15 @@
+D:\C#\1\NewsHub\NewsHub\NewsHub.Application\bin\Debug\net10.0\NewsHub.Application.deps.json
+D:\C#\1\NewsHub\NewsHub\NewsHub.Application\bin\Debug\net10.0\NewsHub.Application.dll
+D:\C#\1\NewsHub\NewsHub\NewsHub.Application\bin\Debug\net10.0\NewsHub.Application.pdb
+D:\C#\1\NewsHub\NewsHub\NewsHub.Application\bin\Debug\net10.0\NewsHub.Domain.dll
+D:\C#\1\NewsHub\NewsHub\NewsHub.Application\bin\Debug\net10.0\NewsHub.Domain.pdb
+D:\C#\1\NewsHub\NewsHub\NewsHub.Application\obj\Debug\net10.0\NewsHub.Application.csproj.AssemblyReference.cache
+D:\C#\1\NewsHub\NewsHub\NewsHub.Application\obj\Debug\net10.0\NewsHub.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\1\NewsHub\NewsHub\NewsHub.Application\obj\Debug\net10.0\NewsHub.Application.AssemblyInfoInputs.cache
+D:\C#\1\NewsHub\NewsHub\NewsHub.Application\obj\Debug\net10.0\NewsHub.Application.AssemblyInfo.cs
+D:\C#\1\NewsHub\NewsHub\NewsHub.Application\obj\Debug\net10.0\NewsHub.Application.csproj.CoreCompileInputs.cache
+D:\C#\1\NewsHub\NewsHub\NewsHub.Application\obj\Debug\net10.0\NewsHub..20EFE1EF.Up2Date
+D:\C#\1\NewsHub\NewsHub\NewsHub.Application\obj\Debug\net10.0\NewsHub.Application.dll
+D:\C#\1\NewsHub\NewsHub\NewsHub.Application\obj\Debug\net10.0\refint\NewsHub.Application.dll
+D:\C#\1\NewsHub\NewsHub\NewsHub.Application\obj\Debug\net10.0\NewsHub.Application.pdb
+D:\C#\1\NewsHub\NewsHub\NewsHub.Application\obj\Debug\net10.0\ref\NewsHub.Application.dll

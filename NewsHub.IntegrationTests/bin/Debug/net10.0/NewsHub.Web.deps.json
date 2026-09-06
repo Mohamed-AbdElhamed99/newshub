@@ -1,0 +1,105 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "NewsHub.Web/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.UI": "10.0.11",
+          "NewsHub.Application": "1.0.0"
+        },
+        "runtime": {
+          "NewsHub.Web.dll": {}
+        }
+      },
+      "FluentValidation/12.1.1": {
+        "runtime": {
+          "lib/net8.0/FluentValidation.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.1.1.0"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Identity.UI/10.0.11": {
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Embedded": "10.0.11"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.AspNetCore.Identity.UI.dll": {
+            "assemblyVersion": "10.0.11.0",
+            "fileVersion": "10.0.1126.37416"
+          }
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Embedded/10.0.11": {
+        "runtime": {
+          "lib/net10.0/Microsoft.Extensions.FileProviders.Embedded.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.1126.37416"
+          }
+        }
+      },
+      "NewsHub.Application/1.0.0": {
+        "dependencies": {
+          "FluentValidation": "12.1.1",
+          "NewsHub.Domain": "1.0.0"
+        },
+        "runtime": {
+          "NewsHub.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "NewsHub.Domain/1.0.0": {
+        "runtime": {
+          "NewsHub.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NewsHub.Web/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FluentValidation/12.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EPpkIe1yh1a0OXyC100oOA8WMbZvqUu5plwhvYcb7oSELfyUZzfxV48BLhvs3kKo4NwG7MGLNgy1RJiYtT8Dpw==",
+      "path": "fluentvalidation/12.1.1",
+      "hashPath": "fluentvalidation.12.1.1.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Identity.UI/10.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WuuUxX3OixfBtb8wpYmkBNLPs+kB57xPQ1bNWwIf/5OQi7fanvJyqoZP7X4NOlkwvbQ4cX6U4p3EW1eLhylyww==",
+      "path": "microsoft.aspnetcore.identity.ui/10.0.11",
+      "hashPath": "microsoft.aspnetcore.identity.ui.10.0.11.nupkg.sha512"
+    },
+    "Microsoft.Extensions.FileProviders.Embedded/10.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-x1wiStyE0RsviK1jdE7a6ua7jIhA0xPXOq5YMfWCWN7RJ9D4Q70oSD9ZVEzHBvovB+f1YQFdPU4036Act442Ow==",
+      "path": "microsoft.extensions.fileproviders.embedded/10.0.11",
+      "hashPath": "microsoft.extensions.fileproviders.embedded.10.0.11.nupkg.sha512"
+    },
+    "NewsHub.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NewsHub.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
