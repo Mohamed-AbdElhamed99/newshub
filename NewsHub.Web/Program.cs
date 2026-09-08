@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using NewsHub.Application.Site.Interfaces.Services;
 using NewsHub.Infrastructure.Data;
 using NewsHub.Infrastructure.Identity;
+using NewsHub.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +21,9 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>(options =>
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+builder.Services.AddScoped<IEmailSender, SmtpEmailSender>();
 
 var app = builder.Build();
 

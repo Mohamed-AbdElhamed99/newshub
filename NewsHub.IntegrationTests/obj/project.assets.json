@@ -38,10 +38,52 @@
           }
         }
       },
+      "BouncyCastle.Cryptography/2.6.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Castle.Core/5.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.EventLog": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Castle.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Castle.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "coverlet.collector/6.0.4": {
         "type": "package",
         "build": {
           "build/netstandard2.0/coverlet.collector.targets": {}
+        }
+      },
+      "FluentAssertions/8.10.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/FluentAssertions.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/FluentAssertions.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "FluentValidation/12.1.1": {
@@ -54,6 +96,22 @@
         "runtime": {
           "lib/net8.0/FluentValidation.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "MailKit/4.17.0": {
+        "type": "package",
+        "dependencies": {
+          "MimeKit": "4.17.0"
+        },
+        "compile": {
+          "lib/net10.0/MailKit.dll": {
+            "related": ".dll.config;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/MailKit.dll": {
+            "related": ".dll.config;.pdb;.xml"
           }
         }
       },
@@ -287,6 +345,24 @@
       },
       "Microsoft.EntityFrameworkCore.Analyzers/10.0.11": {
         "type": "package"
+      },
+      "Microsoft.EntityFrameworkCore.InMemory/10.0.11": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "10.0.11",
+          "Microsoft.Extensions.Caching.Memory": "10.0.11",
+          "Microsoft.Extensions.Logging": "10.0.11"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "related": ".xml"
+          }
+        }
       },
       "Microsoft.EntityFrameworkCore.Relational/10.0.11": {
         "type": "package",
@@ -1140,6 +1216,35 @@
           "build/net8.0/Microsoft.TestPlatform.TestHost.targets": {}
         }
       },
+      "MimeKit/4.17.0": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.6.2",
+          "System.Security.Cryptography.Pkcs": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/MimeKit.dll": {
+            "related": ".dll.config;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/MimeKit.dll": {
+            "related": ".dll.config;.pdb;.xml"
+          }
+        }
+      },
+      "Moq/4.20.72": {
+        "type": "package",
+        "dependencies": {
+          "Castle.Core": "5.1.1"
+        },
+        "compile": {
+          "lib/net6.0/Moq.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Moq.dll": {}
+        }
+      },
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
@@ -1193,7 +1298,7 @@
       "System.Diagnostics.EventLog/9.0.11": {
         "type": "package",
         "compile": {
-          "lib/net9.0/_._": {
+          "lib/net9.0/System.Diagnostics.EventLog.dll": {
             "related": ".xml"
           }
         },
@@ -1249,15 +1354,15 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "System.Security.Cryptography.Pkcs/9.0.11": {
+      "System.Security.Cryptography.Pkcs/10.0.0": {
         "type": "package",
         "compile": {
-          "lib/net9.0/System.Security.Cryptography.Pkcs.dll": {
+          "lib/net10.0/System.Security.Cryptography.Pkcs.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net9.0/System.Security.Cryptography.Pkcs.dll": {
+          "lib/net10.0/System.Security.Cryptography.Pkcs.dll": {
             "related": ".xml"
           }
         },
@@ -1265,7 +1370,7 @@
           "buildTransitive/net8.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net9.0/System.Security.Cryptography.Pkcs.dll": {
+          "runtimes/win/lib/net10.0/System.Security.Cryptography.Pkcs.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -1411,9 +1516,12 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
+          "MailKit": "4.17.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.11",
           "Microsoft.EntityFrameworkCore": "10.0.11",
+          "Microsoft.EntityFrameworkCore.InMemory": "10.0.11",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.11",
+          "NewsHub.Application": "1.0.0",
           "NewsHub.Domain": "1.0.0"
         },
         "compile": {
@@ -1421,6 +1529,29 @@
         },
         "runtime": {
           "bin/placeholder/NewsHub.Infrastructure.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "NewsHub.Tests/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "FluentAssertions": "8.10.0",
+          "Microsoft.EntityFrameworkCore.InMemory": "10.0.11",
+          "Microsoft.NET.Test.Sdk": "17.14.1",
+          "Moq": "4.20.72",
+          "NewsHub.Application": "1.0.0",
+          "NewsHub.Domain": "1.0.0",
+          "coverlet.collector": "6.0.4",
+          "xunit": "2.9.3"
+        },
+        "compile": {
+          "bin/placeholder/NewsHub.Tests.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NewsHub.Tests.dll": {}
         }
       },
       "NewsHub.Web/1.0.0": {
@@ -1482,6 +1613,50 @@
         "lib/net8.0/Azure.Identity.xml",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "BouncyCastle.Cryptography/2.6.2": {
+      "sha512": "7oWOcvnntmMKNzDLsdxAYqApt+AjpRpP2CShjMfIa3umZ42UQMvH0tl1qAliYPNYO6vTdcGMqnRrCPmsfzTI1w==",
+      "type": "package",
+      "path": "bouncycastle.cryptography/2.6.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "bouncycastle.cryptography.2.6.2.nupkg.sha512",
+        "bouncycastle.cryptography.nuspec",
+        "lib/net461/BouncyCastle.Cryptography.dll",
+        "lib/net461/BouncyCastle.Cryptography.xml",
+        "lib/net6.0/BouncyCastle.Cryptography.dll",
+        "lib/net6.0/BouncyCastle.Cryptography.xml",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.dll",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Castle.Core/5.1.1": {
+      "sha512": "rpYtIczkzGpf+EkZgDr9CClTdemhsrwA/W5hMoPjLkRFnXzH44zDLoovXeKtmxb1ykXK9aJVODSpiJml8CTw2g==",
+      "type": "package",
+      "path": "castle.core/5.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ASL - Apache Software Foundation License.txt",
+        "CHANGELOG.md",
+        "LICENSE",
+        "castle-logo.png",
+        "castle.core.5.1.1.nupkg.sha512",
+        "castle.core.nuspec",
+        "lib/net462/Castle.Core.dll",
+        "lib/net462/Castle.Core.xml",
+        "lib/net6.0/Castle.Core.dll",
+        "lib/net6.0/Castle.Core.xml",
+        "lib/netstandard2.0/Castle.Core.dll",
+        "lib/netstandard2.0/Castle.Core.xml",
+        "lib/netstandard2.1/Castle.Core.dll",
+        "lib/netstandard2.1/Castle.Core.xml",
+        "readme.txt"
       ]
     },
     "coverlet.collector/6.0.4": {
@@ -1554,6 +1729,31 @@
         "coverlet.collector.nuspec"
       ]
     },
+    "FluentAssertions/8.10.0": {
+      "sha512": "yGvv+xp0gHFgGwhQcGoDdKIrhLhPi3zYYWWLLHPMctr+G6PWD7QH8L4wqoa5WRZquPbfSV/cP1MraI7ppAHrWw==",
+      "type": "package",
+      "path": "fluentassertions/8.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "FluentAssertions.png",
+        "LICENSE",
+        "fluentassertions.8.10.0.nupkg.sha512",
+        "fluentassertions.nuspec",
+        "lib/net47/FluentAssertions.dll",
+        "lib/net47/FluentAssertions.pdb",
+        "lib/net47/FluentAssertions.xml",
+        "lib/net6.0/FluentAssertions.dll",
+        "lib/net6.0/FluentAssertions.pdb",
+        "lib/net6.0/FluentAssertions.xml",
+        "lib/netstandard2.0/FluentAssertions.dll",
+        "lib/netstandard2.0/FluentAssertions.pdb",
+        "lib/netstandard2.0/FluentAssertions.xml",
+        "lib/netstandard2.1/FluentAssertions.dll",
+        "lib/netstandard2.1/FluentAssertions.pdb",
+        "lib/netstandard2.1/FluentAssertions.xml"
+      ]
+    },
     "FluentValidation/12.1.1": {
       "sha512": "EPpkIe1yh1a0OXyC100oOA8WMbZvqUu5plwhvYcb7oSELfyUZzfxV48BLhvs3kKo4NwG7MGLNgy1RJiYtT8Dpw==",
       "type": "package",
@@ -1567,6 +1767,50 @@
         "fluentvalidation.nuspec",
         "lib/net8.0/FluentValidation.dll",
         "lib/net8.0/FluentValidation.xml"
+      ]
+    },
+    "MailKit/4.17.0": {
+      "sha512": "1nUAVLxM9fhT/78we6/AGsCesnpn5dRNLLeRqOfr52Wnk87pzVwo5YMTMyqnmoXrYc7piGhmayiMA/OgDluIjg==",
+      "type": "package",
+      "path": "mailkit/4.17.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "docs/ExchangeOAuth2.md",
+        "docs/FAQ.md",
+        "docs/GMailOAuth2.md",
+        "docs/README.md",
+        "icons/mailkit-50.png",
+        "lib/net10.0/MailKit.dll",
+        "lib/net10.0/MailKit.dll.config",
+        "lib/net10.0/MailKit.pdb",
+        "lib/net10.0/MailKit.xml",
+        "lib/net462/MailKit.dll",
+        "lib/net462/MailKit.dll.config",
+        "lib/net462/MailKit.pdb",
+        "lib/net462/MailKit.xml",
+        "lib/net47/MailKit.dll",
+        "lib/net47/MailKit.dll.config",
+        "lib/net47/MailKit.pdb",
+        "lib/net47/MailKit.xml",
+        "lib/net48/MailKit.dll",
+        "lib/net48/MailKit.dll.config",
+        "lib/net48/MailKit.pdb",
+        "lib/net48/MailKit.xml",
+        "lib/net8.0/MailKit.dll",
+        "lib/net8.0/MailKit.dll.config",
+        "lib/net8.0/MailKit.pdb",
+        "lib/net8.0/MailKit.xml",
+        "lib/netstandard2.0/MailKit.dll",
+        "lib/netstandard2.0/MailKit.dll.config",
+        "lib/netstandard2.0/MailKit.pdb",
+        "lib/netstandard2.0/MailKit.xml",
+        "lib/netstandard2.1/MailKit.dll",
+        "lib/netstandard2.1/MailKit.dll.config",
+        "lib/netstandard2.1/MailKit.pdb",
+        "lib/netstandard2.1/MailKit.xml",
+        "mailkit.4.17.0.nupkg.sha512",
+        "mailkit.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/10.0.11": {
@@ -1969,6 +2213,21 @@
         "docs/PACKAGE.md",
         "microsoft.entityframeworkcore.analyzers.10.0.11.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/10.0.11": {
+      "sha512": "QBMaEmLIAzUUnH7+1Vbui+9Ui0dSsglkKxjW4sofOHycB3218UrnrUzq+Y75syrR4krUCtY7loWKaVBOeU3qKw==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.inmemory/10.0.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "lib/net10.0/Microsoft.EntityFrameworkCore.InMemory.dll",
+        "lib/net10.0/Microsoft.EntityFrameworkCore.InMemory.xml",
+        "microsoft.entityframeworkcore.inmemory.10.0.11.nupkg.sha512",
+        "microsoft.entityframeworkcore.inmemory.nuspec"
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/10.0.11": {
@@ -3010,6 +3269,62 @@
         "microsoft.testplatform.testhost.nuspec"
       ]
     },
+    "MimeKit/4.17.0": {
+      "sha512": "h/KXsCreJf8RpR/PSAtlbvYtZFndp9N8Wn1Bs248AL7ITyhn+AiIY5bLTvt60tbN2mu6g8KadtBNWygTji2lqg==",
+      "type": "package",
+      "path": "mimekit/4.17.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "docs/FAQ.md",
+        "docs/README.md",
+        "icons/mimekit-50.png",
+        "lib/net10.0/MimeKit.dll",
+        "lib/net10.0/MimeKit.dll.config",
+        "lib/net10.0/MimeKit.pdb",
+        "lib/net10.0/MimeKit.xml",
+        "lib/net462/MimeKit.dll",
+        "lib/net462/MimeKit.pdb",
+        "lib/net462/MimeKit.xml",
+        "lib/net47/MimeKit.dll",
+        "lib/net47/MimeKit.pdb",
+        "lib/net47/MimeKit.xml",
+        "lib/net48/MimeKit.dll",
+        "lib/net48/MimeKit.pdb",
+        "lib/net48/MimeKit.xml",
+        "lib/net8.0/MimeKit.dll",
+        "lib/net8.0/MimeKit.dll.config",
+        "lib/net8.0/MimeKit.pdb",
+        "lib/net8.0/MimeKit.xml",
+        "lib/netstandard2.0/MimeKit.dll",
+        "lib/netstandard2.0/MimeKit.dll.config",
+        "lib/netstandard2.0/MimeKit.pdb",
+        "lib/netstandard2.0/MimeKit.xml",
+        "lib/netstandard2.1/MimeKit.dll",
+        "lib/netstandard2.1/MimeKit.dll.config",
+        "lib/netstandard2.1/MimeKit.pdb",
+        "lib/netstandard2.1/MimeKit.xml",
+        "mimekit.4.17.0.nupkg.sha512",
+        "mimekit.nuspec"
+      ]
+    },
+    "Moq/4.20.72": {
+      "sha512": "EA55cjyNn8eTNWrgrdZJH5QLFp2L43oxl1tlkoYUKIE9pRwL784OWiTXeCV5ApS+AMYEAlt7Fo03A2XfouvHmQ==",
+      "type": "package",
+      "path": "moq/4.20.72",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net462/Moq.dll",
+        "lib/net6.0/Moq.dll",
+        "lib/netstandard2.0/Moq.dll",
+        "lib/netstandard2.1/Moq.dll",
+        "moq.4.20.72.nupkg.sha512",
+        "moq.nuspec",
+        "readme.md"
+      ]
+    },
     "Newtonsoft.Json/13.0.3": {
       "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "type": "package",
@@ -3176,20 +3491,21 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Security.Cryptography.Pkcs/9.0.11": {
-      "sha512": "YS2YqtN6fFjlTDIQI+ucjbbrEvwMn796r+VLTQRr/5Oy6g+i+m7nIou83KnJCnAcKna2I+5eVJRks6SoHSpetQ==",
+    "System.Security.Cryptography.Pkcs/10.0.0": {
+      "sha512": "UPWqLSygJlFerRi9XNIuM0a1VC8gHUIufyP24xQ0sc+XimqUAEcjpOz9DhKpyDjH+5B/wO3RpC0KpkEeDj/ddg==",
       "type": "package",
-      "path": "system.security.cryptography.pkcs/9.0.11",
+      "path": "system.security.cryptography.pkcs/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/System.Security.Cryptography.Pkcs.targets",
         "buildTransitive/net462/_._",
         "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/System.Security.Cryptography.Pkcs.targets",
+        "lib/net10.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net10.0/System.Security.Cryptography.Pkcs.xml",
         "lib/net462/System.Security.Cryptography.Pkcs.dll",
         "lib/net462/System.Security.Cryptography.Pkcs.xml",
         "lib/net8.0/System.Security.Cryptography.Pkcs.dll",
@@ -3200,11 +3516,13 @@
         "lib/netstandard2.0/System.Security.Cryptography.Pkcs.xml",
         "lib/netstandard2.1/System.Security.Cryptography.Pkcs.dll",
         "lib/netstandard2.1/System.Security.Cryptography.Pkcs.xml",
+        "runtimes/win/lib/net10.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net10.0/System.Security.Cryptography.Pkcs.xml",
         "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll",
         "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.xml",
         "runtimes/win/lib/net9.0/System.Security.Cryptography.Pkcs.dll",
         "runtimes/win/lib/net9.0/System.Security.Cryptography.Pkcs.xml",
-        "system.security.cryptography.pkcs.9.0.11.nupkg.sha512",
+        "system.security.cryptography.pkcs.10.0.0.nupkg.sha512",
         "system.security.cryptography.pkcs.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -3398,6 +3716,11 @@
       "path": "../NewsHub.Infrastructure/NewsHub.Infrastructure.csproj",
       "msbuildProject": "../NewsHub.Infrastructure/NewsHub.Infrastructure.csproj"
     },
+    "NewsHub.Tests/1.0.0": {
+      "type": "project",
+      "path": "../NewsHub.Tests/NewsHub.Tests.csproj",
+      "msbuildProject": "../NewsHub.Tests/NewsHub.Tests.csproj"
+    },
     "NewsHub.Web/1.0.0": {
       "type": "project",
       "path": "../NewsHub.Web/NewsHub.Web.csproj",
@@ -3410,6 +3733,7 @@
       "NewsHub.Application >= 1.0.0",
       "NewsHub.Domain >= 1.0.0",
       "NewsHub.Infrastructure >= 1.0.0",
+      "NewsHub.Tests >= 1.0.0",
       "NewsHub.Web >= 1.0.0",
       "coverlet.collector >= 6.0.4",
       "xunit >= 2.9.3",
@@ -3450,6 +3774,9 @@
             },
             "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Infrastructure\\NewsHub.Infrastructure.csproj": {
               "projectPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Infrastructure\\NewsHub.Infrastructure.csproj"
+            },
+            "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Tests\\NewsHub.Tests.csproj": {
+              "projectPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Tests\\NewsHub.Tests.csproj"
             },
             "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Web\\NewsHub.Web.csproj": {
               "projectPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Web\\NewsHub.Web.csproj"

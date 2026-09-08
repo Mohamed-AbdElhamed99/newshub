@@ -10,6 +10,6 @@ public static class UserOwnershipRules
         if (article.AuthorId == Guid.Empty) return false;
         if (userId == Guid.Empty) return false;
 
-        return article.AuthorId == userId;
+        return  article.AuthorId.Equals(userId);
     }
 }

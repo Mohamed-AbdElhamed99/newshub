@@ -16,3 +16,5 @@ D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\obj\Debug\net10.0\NewsHub.Infrast
 D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\obj\Debug\net10.0\NewsHub.Infrastructure.genruntimeconfig.cache
 D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\obj\Debug\net10.0\ref\NewsHub.Infrastructure.dll
 D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\obj\Debug\net10.0\NewsHub.Infrastructure.sourcelink.json
+D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\bin\Debug\net10.0\NewsHub.Application.dll
+D:\C#\1\NewsHub\NewsHub\NewsHub.Infrastructure\bin\Debug\net10.0\NewsHub.Application.pdb

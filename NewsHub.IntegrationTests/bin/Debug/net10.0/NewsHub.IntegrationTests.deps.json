@@ -12,6 +12,7 @@
           "NewsHub.Application": "1.0.0",
           "NewsHub.Domain": "1.0.0",
           "NewsHub.Infrastructure": "1.0.0",
+          "NewsHub.Tests": "1.0.0",
           "NewsHub.Web": "1.0.0",
           "xunit": "2.9.3"
         },
@@ -45,11 +46,46 @@
           }
         }
       },
+      "BouncyCastle.Cryptography/2.6.2": {
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.6.2.46322"
+          }
+        }
+      },
+      "Castle.Core/5.1.1": {
+        "runtime": {
+          "lib/net6.0/Castle.Core.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.1.1.0"
+          }
+        }
+      },
+      "FluentAssertions/8.10.0": {
+        "runtime": {
+          "lib/net6.0/FluentAssertions.dll": {
+            "assemblyVersion": "8.10.0.0",
+            "fileVersion": "8.10.0.0"
+          }
+        }
+      },
       "FluentValidation/12.1.1": {
         "runtime": {
           "lib/net8.0/FluentValidation.dll": {
             "assemblyVersion": "12.0.0.0",
             "fileVersion": "12.1.1.0"
+          }
+        }
+      },
+      "MailKit/4.17.0": {
+        "dependencies": {
+          "MimeKit": "4.17.0"
+        },
+        "runtime": {
+          "lib/net10.0/MailKit.dll": {
+            "assemblyVersion": "4.17.0.0",
+            "fileVersion": "4.17.0.0"
           }
         }
       },
@@ -223,6 +259,19 @@
       "Microsoft.EntityFrameworkCore.Abstractions/10.0.11": {
         "runtime": {
           "lib/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
+            "assemblyVersion": "10.0.11.0",
+            "fileVersion": "10.0.1126.37416"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.InMemory/10.0.11": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "10.0.11",
+          "Microsoft.Extensions.Caching.Memory": "10.0.11",
+          "Microsoft.Extensions.Logging": "10.0.11"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
             "assemblyVersion": "10.0.11.0",
             "fileVersion": "10.0.1126.37416"
           }
@@ -866,6 +915,28 @@
           }
         }
       },
+      "MimeKit/4.17.0": {
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.6.2"
+        },
+        "runtime": {
+          "lib/net10.0/MimeKit.dll": {
+            "assemblyVersion": "4.17.0.0",
+            "fileVersion": "4.17.0.0"
+          }
+        }
+      },
+      "Moq/4.20.72": {
+        "dependencies": {
+          "Castle.Core": "5.1.1"
+        },
+        "runtime": {
+          "lib/net6.0/Moq.dll": {
+            "assemblyVersion": "4.20.72.0",
+            "fileVersion": "4.20.72.0"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.3": {
         "runtime": {
           "lib/net6.0/Newtonsoft.Json.dll": {
@@ -997,13 +1068,33 @@
       },
       "NewsHub.Infrastructure/1.0.0": {
         "dependencies": {
+          "MailKit": "4.17.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.11",
           "Microsoft.EntityFrameworkCore": "10.0.11",
+          "Microsoft.EntityFrameworkCore.InMemory": "10.0.11",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.11",
+          "NewsHub.Application": "1.0.0",
           "NewsHub.Domain": "1.0.0"
         },
         "runtime": {
           "NewsHub.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "NewsHub.Tests/1.0.0": {
+        "dependencies": {
+          "FluentAssertions": "8.10.0",
+          "Microsoft.EntityFrameworkCore.InMemory": "10.0.11",
+          "Microsoft.NET.Test.Sdk": "17.14.1",
+          "Moq": "4.20.72",
+          "NewsHub.Application": "1.0.0",
+          "NewsHub.Domain": "1.0.0",
+          "xunit": "2.9.3"
+        },
+        "runtime": {
+          "NewsHub.Tests.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -1044,12 +1135,40 @@
       "path": "azure.identity/1.17.1",
       "hashPath": "azure.identity.1.17.1.nupkg.sha512"
     },
+    "BouncyCastle.Cryptography/2.6.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7oWOcvnntmMKNzDLsdxAYqApt+AjpRpP2CShjMfIa3umZ42UQMvH0tl1qAliYPNYO6vTdcGMqnRrCPmsfzTI1w==",
+      "path": "bouncycastle.cryptography/2.6.2",
+      "hashPath": "bouncycastle.cryptography.2.6.2.nupkg.sha512"
+    },
+    "Castle.Core/5.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rpYtIczkzGpf+EkZgDr9CClTdemhsrwA/W5hMoPjLkRFnXzH44zDLoovXeKtmxb1ykXK9aJVODSpiJml8CTw2g==",
+      "path": "castle.core/5.1.1",
+      "hashPath": "castle.core.5.1.1.nupkg.sha512"
+    },
+    "FluentAssertions/8.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yGvv+xp0gHFgGwhQcGoDdKIrhLhPi3zYYWWLLHPMctr+G6PWD7QH8L4wqoa5WRZquPbfSV/cP1MraI7ppAHrWw==",
+      "path": "fluentassertions/8.10.0",
+      "hashPath": "fluentassertions.8.10.0.nupkg.sha512"
+    },
     "FluentValidation/12.1.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-EPpkIe1yh1a0OXyC100oOA8WMbZvqUu5plwhvYcb7oSELfyUZzfxV48BLhvs3kKo4NwG7MGLNgy1RJiYtT8Dpw==",
       "path": "fluentvalidation/12.1.1",
       "hashPath": "fluentvalidation.12.1.1.nupkg.sha512"
+    },
+    "MailKit/4.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1nUAVLxM9fhT/78we6/AGsCesnpn5dRNLLeRqOfr52Wnk87pzVwo5YMTMyqnmoXrYc7piGhmayiMA/OgDluIjg==",
+      "path": "mailkit/4.17.0",
+      "hashPath": "mailkit.4.17.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/10.0.11": {
       "type": "package",
@@ -1120,6 +1239,13 @@
       "sha512": "sha512-6auJR+9+9VunznKfH7WGrHMrnrmA0F7JZ22EXzwXvVhjfnbu9Xq7NSIWaOf3KJsOanM2qf5ajJ2JR5TlcPZTLA==",
       "path": "microsoft.entityframeworkcore.abstractions/10.0.11",
       "hashPath": "microsoft.entityframeworkcore.abstractions.10.0.11.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/10.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QBMaEmLIAzUUnH7+1Vbui+9Ui0dSsglkKxjW4sofOHycB3218UrnrUzq+Y75syrR4krUCtY7loWKaVBOeU3qKw==",
+      "path": "microsoft.entityframeworkcore.inmemory/10.0.11",
+      "hashPath": "microsoft.entityframeworkcore.inmemory.10.0.11.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/10.0.11": {
       "type": "package",
@@ -1359,6 +1485,20 @@
       "path": "microsoft.testplatform.testhost/17.14.1",
       "hashPath": "microsoft.testplatform.testhost.17.14.1.nupkg.sha512"
     },
+    "MimeKit/4.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-h/KXsCreJf8RpR/PSAtlbvYtZFndp9N8Wn1Bs248AL7ITyhn+AiIY5bLTvt60tbN2mu6g8KadtBNWygTji2lqg==",
+      "path": "mimekit/4.17.0",
+      "hashPath": "mimekit.4.17.0.nupkg.sha512"
+    },
+    "Moq/4.20.72": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EA55cjyNn8eTNWrgrdZJH5QLFp2L43oxl1tlkoYUKIE9pRwL784OWiTXeCV5ApS+AMYEAlt7Fo03A2XfouvHmQ==",
+      "path": "moq/4.20.72",
+      "hashPath": "moq.4.20.72.nupkg.sha512"
+    },
     "Newtonsoft.Json/13.0.3": {
       "type": "package",
       "serviceable": true,
@@ -1454,6 +1594,11 @@
       "sha512": ""
     },
     "NewsHub.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NewsHub.Tests/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

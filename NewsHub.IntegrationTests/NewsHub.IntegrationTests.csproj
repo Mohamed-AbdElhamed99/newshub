@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NewsHub.Infrastructure\NewsHub.Infrastructure.csproj" />
+    <ProjectReference Include="..\NewsHub.Tests\NewsHub.Tests.csproj" />
     <ProjectReference Include="..\NewsHub.Web\NewsHub.Web.csproj" />
     <ProjectReference Include="..\NewsHub.Application\NewsHub.Application.csproj" />
     <ProjectReference Include="..\NewsHub.Domain\NewsHub.Domain.csproj" />
