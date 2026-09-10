@@ -45,7 +45,7 @@ public class AuthService : IAuthService
         // Generate + send email confirmation token (via a separate IEmailSender/INotificationService)
         var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
         var encodedToken = Uri.EscapeDataString(token);
-        var confirmLink = $"https://yourdomain.com/Auth/VerifyEmail?userId={user.Id}&token={encodedToken}";
+        var confirmLink = $"https://localhost:5189/Auth/VerifyEmail?userId={user.Id}&token={encodedToken}";
 
         await _emailSender.SendAsync(user.Email!, "Confirm your NewsHub account",
             $"<p>Welcome {user.FullName}, please confirm your email: <a href='{confirmLink}'>Confirm</a></p>");
@@ -60,7 +60,12 @@ public class AuthService : IAuthService
         if (user is null || !user.IsActive)
             return AuthResult.Failure("Invalid credentials.");
 
-        var result = await _signInManager.CheckPasswordSignInAsync(user, dto.Password, lockoutOnFailure: true);
+        var result = await _signInManager.PasswordSignInAsync(
+            user, dto.Password, dto.RememberMe, lockoutOnFailure: true);
+        
+        if (result.IsLockedOut)
+            return AuthResult.Failure("Account locked due to multiple failed attempts. Try again later.");
+        
         if (!result.Succeeded)
             return AuthResult.Failure("Invalid credentials.");
 
@@ -76,7 +81,7 @@ public class AuthService : IAuthService
 
         var token = await _userManager.GeneratePasswordResetTokenAsync(user);
         var encodedToken = Uri.EscapeDataString(token);
-        var resetLink = $"https://yourdomain.com/Auth/ResetPassword?email={email}&token={encodedToken}";
+        var resetLink = $"https://localhost:5189/Auth/ResetPassword?email={email}&token={encodedToken}";
 
         await _emailSender.SendAsync(email, "Reset your NewsHub password",
             $"<p>Click to reset your password: <a href='{resetLink}'>Reset</a></p>");
@@ -96,5 +101,10 @@ public class AuthService : IAuthService
     {
         // Needs userId alongside the token in practice — see note below
         throw new NotImplementedException();
+    }
+
+    public async Task LogoutAsync()
+    {
+        await _signInManager.SignOutAsync();
     }
 }

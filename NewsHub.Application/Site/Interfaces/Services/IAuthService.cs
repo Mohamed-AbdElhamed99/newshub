@@ -9,4 +9,5 @@ public interface IAuthService
     Task RequestPasswordResetAsync(string email);
     Task ResetPasswordAsync(string email, string newPassword, string token);
     Task VerifyEmailAsync(string token);
+    Task LogoutAsync();
 }
