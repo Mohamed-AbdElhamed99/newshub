@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+
+    <data name="Dashboard" xml:space="preserve">
+    <value>لوحة التحكم</value>
+  </data>
+    <data name="Articles" xml:space="preserve">
+    <value>المقالات</value>
+  </data>
+    <data name="Categories" xml:space="preserve">
+    <value>الأقسام</value>
+  </data>
+    <data name="Tags" xml:space="preserve">
+    <value>الوسوم</value>
+  </data>
+    <data name="Comments" xml:space="preserve">
+    <value>التعليقات</value>
+  </data>
+    <data name="Ratings" xml:space="preserve">
+    <value>التقييمات</value>
+  </data>
+    <data name="Subscriptions" xml:space="preserve">
+    <value>الاشتراكات</value>
+  </data>
+    <data name="Contact Messages" xml:space="preserve">
+    <value>رسائل التواصل</value>
+  </data>
+    <data name="Site Settings" xml:space="preserve">
+    <value>إعدادات الموقع</value>
+  </data>
+    <data name="Email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+    <data name="Password" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+    <data name="Remember Me" xml:space="preserve">
+    <value>تذكرني</value>
+  </data>
+    <data name="Sign in" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+    <data name="Forgot Password?" xml:space="preserve">
+    <value>هل نسيت كلمة المرور؟</value>
+  </data>
+    <data name="Log Out" xml:space="preserve">
+    <value>تسجيل الخروج</value>
+  </data>
+</root>
