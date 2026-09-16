@@ -1,0 +1,57 @@
+﻿@using NewsHub.Web.Resources
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
+@model NewsHub.Web.Models.Auth.RegisterViewModel
+@{
+    ViewData["Title"] = Localizer["Create account"];
+}
+
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="bg-light rounded p-5">
+                    <h1 class="mb-4">@Localizer["Create your account"]</h1>
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <form asp-controller="Auth" asp-action="Register" method="post">
+                        @Html.AntiForgeryToken()
+                        <div class="row g-4">
+                            <div class="col-lg-6">
+                                <input asp-for="FullName" class="w-100 form-control border-0 py-3" placeholder="@Localizer["Full Name"]">
+                                <span asp-validation-for="FullName" class="text-danger"></span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input asp-for="UserName" class="w-100 form-control border-0 py-3" placeholder="@Localizer["Username"]">
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input asp-for="Email" class="w-100 form-control border-0 py-3" placeholder="@Localizer["Email"]">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input asp-for="Phone" class="w-100 form-control border-0 py-3" placeholder="@Localizer["Phone"]">
+                                <span asp-validation-for="Phone" class="text-danger"></span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input asp-for="Password" class="w-100 form-control border-0 py-3" placeholder="@Localizer["Password"]">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input asp-for="ConfirmPassword" class="w-100 form-control border-0 py-3" placeholder="@Localizer["Confirm Password"]">
+                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                            </div>
+                            <div class="col-12">
+                                <button class="w-100 btn btn-primary form-control py-3" type="submit">@Localizer["Create account"]</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <p class="mt-4 mb-0 text-body">
+                        @Localizer["Already have an account?"] <a asp-controller="Auth" asp-action="Login">@Localizer["Sign in"]</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

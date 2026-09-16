@@ -1,0 +1,13 @@
+﻿@using NewsHub.Application.Site.DTOs.Categories
+@model IEnumerable<CategoryListItemDto>
+
+<div class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">@Localizer["Categories"]</a>
+    <div class="dropdown-menu m-0 bg-secondary rounded-0">
+        @foreach (var category in Model)
+        {
+            <a asp-controller="Category" asp-action="Index" asp-route-slug="@category.Slug"
+               class="dropdown-item">@category.Name</a>
+        }
+    </div>
+</div>

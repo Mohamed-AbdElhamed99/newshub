@@ -1,0 +1,376 @@
+﻿@using NewsHub.Application.Site.DTOs.Articles
+@using NewsHub.Web.Resources
+@model NewsHub.Web.Models.Home.HomeIndexViewModel
+@{
+    ViewData["Title"] = Localizer["Home"];
+
+    var sidebarArticles = Model.MainSectionSidebar.ToList();
+    var leadArticle = sidebarArticles.FirstOrDefault();
+    var sidebarRest = sidebarArticles.Skip(1).ToList();
+    var whatsNew = Model.WhatsNew.Where(c => c.Articles.Any()).ToList();
+}
+
+@* ---------- Features ---------- *@
+@if (whatsNew.Any())
+{
+    <div class="container-fluid features mb-5">
+        <div class="container py-5">
+            <div class="row g-4">
+                @foreach (var category in whatsNew.Take(4))
+                {
+                    var article = category.Articles.First();
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="row g-4 align-items-center features-item">
+                            <div class="col-4">
+                                <div class="rounded-circle position-relative">
+                                    <div class="overflow-hidden rounded-circle">
+                                        <img src="@article.ImageUrl" class="img-zoomin img-fluid rounded-circle w-100" alt="@article.Title">
+                                    </div>
+                                    <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute"
+                                          style="top: 10%; right: -10px;">@category.Articles.Count()</span>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="features-content d-flex flex-column">
+                                    <p class="text-uppercase mb-2">@category.CategoryName</p>
+                                    <a asp-controller="Article" asp-action="Details" asp-route-slug="@article.Slug" class="h6">@article.Title</a>
+                                    <small class="text-body d-block">
+                                        <i class="fas fa-calendar-alt me-1"></i> @article.PublishedAt.ToString("MMMM d, yyyy")
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+@* ---------- Main post ---------- *@
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row g-4">
+            <div class="col-lg-7 col-xl-8 mt-0">
+                @if (leadArticle is not null)
+                {
+                    <div class="position-relative overflow-hidden rounded">
+                        <img src="@leadArticle.ImageUrl" class="img-fluid rounded img-zoomin w-100" alt="@leadArticle.Title">
+                        <div class="d-flex justify-content-center px-4 position-absolute flex-wrap" style="bottom: 10px; left: 0;">
+                            <span class="text-white me-3"><i class="fa fa-eye"></i> @leadArticle.ViewCount.ToString("N0") @Localizer["Views"]</span>
+                            <span class="text-white"><i class="fa fa-comment-dots"></i> @leadArticle.CommentCount @Localizer["Comments"]</span>
+                        </div>
+                    </div>
+                    <div class="border-bottom py-3">
+                        <a asp-controller="Article" asp-action="Details" asp-route-slug="@leadArticle.Slug"
+                           class="display-4 text-dark mb-0 link-hover">@leadArticle.Title</a>
+                    </div>
+                    @if (!string.IsNullOrWhiteSpace(leadArticle.Excerpt))
+                    {
+                        <p class="mt-3 mb-4">@leadArticle.Excerpt</p>
+                    }
+                }
+
+                @if (Model.TopStory is not null)
+                {
+                    <div class="bg-light p-4 rounded">
+                        <div class="news-2">
+                            <h3 class="mb-4">@Localizer["Top Story"]</h3>
+                        </div>
+                        <div class="row g-4 align-items-center">
+                            <div class="col-md-6">
+                                <div class="rounded overflow-hidden">
+                                    <img src="@Model.TopStory.ImageUrl" class="img-fluid rounded img-zoomin w-100" alt="@Model.TopStory.Title">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex flex-column">
+                                    <a asp-controller="Article" asp-action="Details" asp-route-slug="@Model.TopStory.Slug"
+                                       class="h3">@Model.TopStory.Title</a>
+                                    <p class="mb-0 fs-5"><i class="fa fa-eye"></i> @Model.TopStory.ViewCount.ToString("N0") @Localizer["Views"]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div class="col-lg-5 col-xl-4">
+                <div class="bg-light rounded p-4 pt-0">
+                    <div class="row g-4">
+                        @if (sidebarRest.Any())
+                        {
+                            var featured = sidebarRest.First();
+                            <div class="col-12">
+                                <div class="rounded overflow-hidden">
+                                    <img src="@featured.ImageUrl" class="img-fluid rounded img-zoomin w-100" alt="@featured.Title">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex flex-column">
+                                    <a asp-controller="Article" asp-action="Details" asp-route-slug="@featured.Slug"
+                                       class="h4 mb-2">@featured.Title</a>
+                                    <p class="fs-5 mb-0"><i class="fa fa-eye"></i> @featured.ViewCount.ToString("N0") @Localizer["Views"]</p>
+                                    <p class="fs-5 mb-0"><i class="fa fa-comment-dots"></i> @featured.CommentCount @Localizer["Comments"]</p>
+                                </div>
+                            </div>
+
+                            @foreach (var article in sidebarRest.Skip(1))
+                            {
+                                <div class="col-12">
+                                    <partial name="_ArticleListItem" model="article" view-data='new ViewDataDictionary(ViewData) { ["ShowMeta"] = true }' />
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* ---------- Subscribe banner ---------- *@
+<div class="container-fluid py-5 my-5" style="background: rgba(202, 203, 185, 1);">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-lg-7">
+                <h1 class="mb-4 text-primary">@Localizer["NewsHub"]</h1>
+                <h1 class="mb-4">@Localizer["Get every weekly update"]</h1>
+                <p class="text-dark mb-4 pb-2">
+                    @Localizer["One email a week with the stories our editors thought were worth your time. Unsubscribe whenever you like."]
+                </p>
+                <form asp-controller="Subscription" asp-action="Subscribe" method="post"
+                      class="position-relative mx-0">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="returnUrl" value="@Context.Request.Path" />
+                    <input name="email" class="form-control border-0 w-100 py-3 rounded-pill" type="email"
+                           placeholder="you@example.com" required>
+                    <button type="submit" class="btn btn-primary border-0 py-3 px-5 rounded-pill text-white position-absolute" style="top:0; right:0;">
+                        @Localizer["Subscribe Now"]
+                    </button>
+                </form>
+
+                @if (TempData["SubscribeMessage"] is string message)
+                {
+                    <div class="alert @(TempData["SubscribeSuccess"] as bool? == true ? "alert-success" : "alert-danger") mt-2">
+                        @message
+                    </div>
+                }
+            </div>
+            <div class="col-lg-5">
+                <div class="rounded">
+                    <img src="~/img/banner-img.jpg" class="img-fluid rounded w-100" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* ---------- Latest news carousel ---------- *@
+@if (Model.LatestNewsCarousel.Any())
+{
+    <div class="container-fluid latest-news py-5">
+        <div class="container py-5">
+            <h2 class="mb-4">@Localizer["Latest News"]</h2>
+            <div class="latest-news-carousel owl-carousel">
+                @foreach (var article in Model.LatestNewsCarousel)
+                {
+                    <partial name="_ArticleCard" model="article" />
+                }
+            </div>
+        </div>
+    </div>
+}
+
+@* ---------- What's New + sidebar ---------- *@
+<div class="container-fluid populer-news py-5">
+    <div class="container py-5">
+        <div class="tab-class mb-4">
+            <div class="row g-4">
+                <div class="col-lg-8 col-xl-9">
+                    @if (whatsNew.Any())
+                    {
+                        <div class="d-flex flex-column flex-md-row justify-content-md-between border-bottom mb-4">
+                            <h1 class="mb-4">@Localizer["What's New"]</h1>
+                            <ul class="nav nav-pills d-inline-flex text-center">
+                                @foreach (var (category, index) in whatsNew.Select((c, i) => (c, i)))
+                                {
+                                    <li class="nav-item mb-3">
+                                        <a class="d-flex py-2 bg-light rounded-pill me-2 @(index == 0 ? "active" : "")"
+                                           data-bs-toggle="pill" href="#tab-@category.CategoryId">
+                                            <span class="text-dark px-3">@category.CategoryName</span>
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+
+                        <div class="tab-content mb-4">
+                            @foreach (var (category, index) in whatsNew.Select((c, i) => (c, i)))
+                            {
+                                var articles = category.Articles.ToList();
+                                var main = articles.First();
+                                <div id="tab-@category.CategoryId" class="tab-pane fade show p-0 @(index == 0 ? "active" : "")">
+                                    <div class="row g-4">
+                                        <div class="col-lg-8">
+                                            <div class="position-relative rounded overflow-hidden">
+                                                <img src="@main.ImageUrl" class="img-zoomin img-fluid rounded w-100" alt="@main.Title">
+                                                <div class="position-absolute text-white px-4 py-2 bg-primary rounded" style="top: 20px; right: 20px;">
+                                                    @category.CategoryName
+                                                </div>
+                                            </div>
+                                            <div class="my-4">
+                                                <a asp-controller="Article" asp-action="Details" asp-route-slug="@main.Slug" class="h4">@main.Title</a>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span class="text-dark me-3"><i class="fa fa-eye"></i> @main.ViewCount.ToString("N0") @Localizer["Views"]</span>
+                                                <span class="text-dark me-3"><i class="fa fa-comment-dots"></i> @main.CommentCount @Localizer["Comments"]</span>
+                                                <span class="text-dark"><i class="fas fa-calendar-alt"></i> @main.PublishedAt.ToString("MMM d, yyyy")</span>
+                                            </div>
+                                            @if (!string.IsNullOrWhiteSpace(main.Excerpt))
+                                            {
+                                                <p class="my-4">@main.Excerpt</p>
+                                            }
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="row g-4">
+                                                @foreach (var article in articles.Skip(1))
+                                                {
+                                                    <div class="col-12">
+                                                        <partial name="_ArticleListItem" model="article"
+                                                                 view-data='new ViewDataDictionary(ViewData) { ["CategoryName"] = category.CategoryName }' />
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+
+                    @if (Model.MostViewed.Any())
+                    {
+                        <div class="border-bottom mb-4">
+                            <h2 class="my-4">@Localizer["Most Viewed"]</h2>
+                        </div>
+                        <div class="whats-carousel owl-carousel">
+                            @foreach (var article in Model.MostViewed)
+                            {
+                                <partial name="_ArticleCard" model="article" />
+                            }
+                        </div>
+                    }
+
+                    @if (Model.LifeStyle is not null && Model.LifeStyle.Articles.Any())
+                    {
+                        <div class="mt-5 lifestyle">
+                            <div class="border-bottom mb-4">
+                                <h1 class="mb-4">@Model.LifeStyle.CategoryName</h1>
+                            </div>
+                            <div class="row g-4">
+                                @foreach (var article in Model.LifeStyle.Articles.Take(2))
+                                {
+                                    <div class="col-lg-6">
+                                        <div class="lifestyle-item rounded">
+                                            <img src="@article.ImageUrl" class="img-fluid w-100 rounded" alt="@article.Title">
+                                            <div class="lifestyle-content">
+                                                <div class="mt-auto">
+                                                    <a asp-controller="Article" asp-action="Details" asp-route-slug="@article.Slug"
+                                                       class="h4 text-white link-hover">@article.Title</a>
+                                                    <div class="d-flex justify-content-between mt-4">
+                                                        <small class="text-white"><i class="fa fa-eye me-1"></i> @article.ViewCount.ToString("N0") @Localizer["Views"]</small>
+                                                        <small class="text-white d-block">
+                                                            <i class="fas fa-calendar-alt me-1"></i> @article.PublishedAt.ToString("MMM d, yyyy")
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                @* ---------- Sidebar ---------- *@
+                <div class="col-lg-4 col-xl-3">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="p-3 rounded border">
+                                @if (Model.SocialLinks.Any())
+                                {
+                                    <h4 class="mb-4">@Localizer["Stay Connected"]</h4>
+                                    <div class="row g-4">
+                                        <div class="col-12">
+                                            @foreach (var link in Model.SocialLinks)
+                                            {
+                                                <a href="@link.Url" target="_blank" rel="noopener"
+                                                   class="w-100 rounded btn btn-dark d-flex align-items-center p-3 mb-2">
+                                                    <i class=" btn btn-light btn-square rounded-circle me-3"></i>
+                                                    <span class="text-white">@link.Platform</span>
+                                                </a>
+                                            }
+                                        </div>
+                                    </div>
+                                }
+
+                                @if (Model.PopularNews.Any())
+                                {
+                                    <h4 class="my-4">@Localizer["Popular News"]</h4>
+                                    <div class="row g-4">
+                                        @foreach (var article in Model.PopularNews)
+                                        {
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center features-item">
+                                                    <div class="col-4">
+                                                        <div class="overflow-hidden rounded-circle">
+                                                            <img src="@article.ImageUrl" class="img-zoomin img-fluid rounded-circle w-100" alt="@article.Title">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <a asp-controller="Article" asp-action="Details" asp-route-slug="@article.Slug"
+                                                               class="h6">@article.Title</a>
+                                                            <small class="text-body d-block">
+                                                                <i class="fas fa-star text-primary me-1"></i>
+                                                                @article.AverageRating.ToString("0.0") / 5
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        <div class="col-lg-12">
+                                            <a asp-controller="Article" asp-action="Index"
+                                               class="link-hover btn border border-primary rounded-pill text-dark w-100 py-3 mb-4">@Localizer["View More"]</a>
+                                        </div>
+                                    </div>
+                                }
+
+                                @if (Model.TrendingTags.Any())
+                                {
+                                    <div class="border-bottom my-3 pb-3">
+                                        <h4 class="mb-0">@Localizer["Trending Tags"]</h4>
+                                    </div>
+                                    <ul class="nav nav-pills d-inline-flex text-center mb-4">
+                                        @foreach (var tag in Model.TrendingTags)
+                                        {
+                                            <li class="nav-item mb-3">
+                                                <a class="d-flex py-2 bg-light rounded-pill me-2"
+                                                   href="#" >
+                                                    <span class="text-dark link-hover px-3">@tag.Name</span>
+                                                </a>
+                                            </li>
+                                        }
+                                    </ul>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

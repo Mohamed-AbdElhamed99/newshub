@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+    <data name="Articles" xml:space="preserve">
+    <value>Articles</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+    <data name="Tags" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+    <data name="Comments" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+    <data name="Ratings" xml:space="preserve">
+    <value>Ratings</value>
+  </data>
+    <data name="Subscriptions" xml:space="preserve">
+    <value>Subscriptions</value>
+  </data>
+    <data name="Contact Messages" xml:space="preserve">
+    <value>Contact Messages</value>
+  </data>
+    <data name="Site Settings" xml:space="preserve">
+    <value>Site Settings</value>
+  </data>
+    <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+    <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+    <data name="Remember Me" xml:space="preserve">
+    <value>Remember Me</value>
+  </data>
+    <data name="Sign in" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+    <data name="Forgot Password?" xml:space="preserve">
+    <value>Forgot Password?</value>
+  </data>
+    <data name="Log Out" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
+  <data name="NewsHub" xml:space="preserve">
+    <value>NewsHub</value>
+  </data>
+  <data name="Admin Panel" xml:space="preserve">
+    <value>Admin Panel</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>Content</value>
+  </data>
+  <data name="Engagement" xml:space="preserve">
+    <value>Engagement</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="New Category" xml:space="preserve">
+    <value>New Category</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Search by" xml:space="preserve">
+    <value>Search by</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="Slug" xml:space="preserve">
+    <value>Slug</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Article" xml:space="preserve">
+    <value>Article</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Views" xml:space="preserve">
+    <value>Views</value>
+  </data>
+  <data name="Trending" xml:space="preserve">
+    <value>Trending</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>Publish</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="IsTrending" xml:space="preserve">
+    <value>IsTrending</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="All statuses" xml:space="preserve">
+    <value>All statuses</value>
+  </data>
+  <data name="Reject" xml:space="preserve">
+    <value>Reject</value>
+  </data>
+  <data name="Approve" xml:space="preserve">
+    <value>Approve</value>
+  </data>
+  <data name="Excerpt" xml:space="preserve">
+    <value>Excerpt</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Tag" xml:space="preserve">
+    <value>Tag</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Rating" xml:space="preserve">
+    <value>Rating</value>
+  </data>
+  <data name="Subscribe Date" xml:space="preserve">
+    <value>Subscribe Date</value>
+  </data>
+  <data name="Unsubscribed_Date" xml:space="preserve">
+    <value>Unsubscribe Date</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="Contact Settings" xml:space="preserve">
+    <value>Contact Settings</value>
+  </data>
+  <data name="Social Links" xml:space="preserve">
+    <value>Social Links</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="Platform" xml:space="preserve">
+    <value>Platform</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Rate this article" xml:space="preserve">
+    <value>Rate this article</value>
+  </data>
+  <data name="Excellent" xml:space="preserve">
+    <value>Excellent</value>
+  </data>
+  <data name="Good" xml:space="preserve">
+    <value>Good</value>
+  </data>
+  <data name="Average" xml:space="preserve">
+    <value>Average</value>
+  </data>
+  <data name="Poor" xml:space="preserve">
+    <value>Poor</value>
+  </data>
+  <data name="Very poor" xml:space="preserve">
+    <value>Very poor</value>
+  </data>
+  <data name="Submit rating" xml:space="preserve">
+    <value>Submit rating</value>
+  </data>
+  <data name="Sign in to rate this article." xml:space="preserve">
+    <value>Sign in to rate this article.</value>
+  </data>
+  <data name="No comments yet — be the first to say something." xml:space="preserve">
+    <value>No comments yet — be the first to say something.</value>
+  </data>
+  <data name="Reader" xml:space="preserve">
+    <value>Reader</value>
+  </data>
+  <data name="Leave a comment" xml:space="preserve">
+    <value>Leave a comment</value>
+  </data>
+  <data name="Your comment" xml:space="preserve">
+    <value>Your comment</value>
+  </data>
+  <data name="Post comment" xml:space="preserve">
+    <value>Post comment</value>
+  </data>
+  <data name="Sign in to leave a comment." xml:space="preserve">
+    <value>Sign in to leave a comment.</value>
+  </data>
+  <data name="Forgot password" xml:space="preserve">
+    <value>Forgot password</value>
+  </data>
+  <data name="Reset your password" xml:space="preserve">
+    <value>Reset your password</value>
+  </data>
+  <data name="Enter the email on your account and we'll send you a link to reset your password." xml:space="preserve">
+    <value>Enter the email on your account and we'll send you a link to reset your password.</value>
+  </data>
+  <data name="Send reset link" xml:space="preserve">
+    <value>Send reset link</value>
+  </data>
+  <data name="Don't have an account?" xml:space="preserve">
+    <value>Don't have an account?</value>
+  </data>
+  <data name="Create one" xml:space="preserve">
+    <value>Create one</value>
+  </data>
+  <data name="Create account" xml:space="preserve">
+    <value>Create account</value>
+  </data>
+  <data name="Create your account" xml:space="preserve">
+    <value>Create your account</value>
+  </data>
+  <data name="Full Name" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Confirm Password" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="Already have an account?" xml:space="preserve">
+    <value>Already have an account?</value>
+  </data>
+  <data name="Reset password" xml:space="preserve">
+    <value>Reset password</value>
+  </data>
+  <data name="Choose a new password" xml:space="preserve">
+    <value>Choose a new password</value>
+  </data>
+  <data name="New Password" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="Confirm New Password" xml:space="preserve">
+    <value>Confirm New Password</value>
+  </data>
+  <data name="Verify email" xml:space="preserve">
+    <value>Verify email</value>
+  </data>
+  <data name="Email confirmed" xml:space="preserve">
+    <value>Email confirmed</value>
+  </data>
+  <data name="Your email address has been verified — you can sign in now." xml:space="preserve">
+    <value>Your email address has been verified — you can sign in now.</value>
+  </data>
+  <data name="Verification unavailable" xml:space="preserve">
+    <value>Verification unavailable</value>
+  </data>
+</root>

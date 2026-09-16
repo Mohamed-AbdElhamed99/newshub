@@ -1,0 +1,11 @@
+﻿@{
+    var currentCulture = System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var returnUrl = $"{Context.Request.Path}{Context.Request.QueryString}";
+}
+
+<form asp-area="" asp-controller="Culture" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl" method="post" class="d-flex align-items-center">
+    <select name="culture" class="form-select form-select-sm lang-switcher" onchange="this.form.submit()">
+        <option value="en" selected="@(currentCulture == "en" ? "selected" : null)">English</option>
+        <option value="ar" selected="@(currentCulture == "ar" ? "selected" : null)">العربية</option>
+    </select>
+</form>

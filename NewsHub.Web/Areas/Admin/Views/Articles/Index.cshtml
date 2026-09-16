@@ -1,0 +1,96 @@
+﻿@model NewsHub.Application.Common.Pagination.PagedResult<NewsHub.Application.Admin.DTOs.Articles.ArticleAdminDto>
+@{ ViewData["Title"] = "Articles"; }
+
+<div class="card">
+    <div class="card-header d-flex align-items-center justify-content-between">
+        <h5 class="mb-0">@Localizer["Articles"]</h5>
+        <a asp-action="Create" class="btn btn-primary btn-sm"><i class="bx bx-plus"></i> @Localizer["Add"] @Localizer["Article"]</a>
+    </div>
+
+    <div class="card-body">
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success">@TempData["Success"]</div>
+        }
+    </div>
+
+    <div class="table-responsive text-nowrap">
+        <table class="table table-hover">
+            <thead>
+                <tr><th>@Localizer["Image"]</th><th>@Localizer["Title"]</th><th>@Localizer["Status"]</th><th>@Localizer["Views"]</th><th>@Localizer["Trending"]</th><th>@Localizer["Actions"]</th></tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var article in Model.Items)
+                {
+                    <tr>
+                        <td>
+                            @if (!string.IsNullOrEmpty(article.ImageUrl))
+                            {
+                                <img src="@article.ImageUrl" width="40" height="40" class="rounded" alt="@article.Title" />
+                            }
+                        </td>
+                        <td><strong>@article.Title</strong></td>
+                        <td>
+                            @{
+                                var badgeClass = article.Status.ToString() switch
+                                {
+                                    "Published" => "bg-label-success",
+                                    "Draft" => "bg-label-warning",
+                                    _ => "bg-label-secondary"
+                                };
+                            }
+                            <span class="badge @badgeClass">@article.Status</span>
+                        </td>
+                        <td>@article.ViewCount</td>
+                        <td>
+                            @if (article.IsTrending)
+                            {
+                                <i class="bx bxs-hot text-danger" title="Trending"></i>
+                            }
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" asp-action="Edit" asp-route-id="@article.Id">
+                                        <i class="bx bx-edit-alt me-1"></i> @Localizer["Edit"]
+                                    </a>
+                                    @if (article.Status.ToString() != "Published")
+                                    {
+                                        <form asp-action="Publish" asp-route-id="@article.Id" method="post">
+                                            @Html.AntiForgeryToken()
+                                            <button type="submit" class="dropdown-item">
+                                                <i class="bx bx-check-circle me-1"></i> @Localizer["Publish"]
+                                            </button>
+                                        </form>
+                                    }
+                                    <form asp-action="Delete" asp-route-id="@article.Id" method="post" onsubmit="return confirm('Delete this article?');">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="dropdown-item"><i class="bx bx-trash me-1"></i>@Localizer["Delete"] </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    @{ var totalPages = (int)Math.Ceiling(Model.TotalCount / (double)Model.PageSize); }
+    @if (totalPages > 1)
+    {
+        <nav class="p-3">
+            <ul class="pagination justify-content-end mb-0">
+                @for (var p = 1; p <= totalPages; p++)
+                {
+                    <li class="page-item @(p == Model.Page ? "active" : "")">
+                        <a class="page-link" asp-action="Index" asp-route-page="@p">@p</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    }
+</div>

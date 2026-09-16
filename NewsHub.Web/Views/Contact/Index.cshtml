@@ -1,0 +1,114 @@
+﻿@using NewsHub.Web.Resources
+@model NewsHub.Web.Models.Contact.ContactViewModel
+@{
+    ViewData["Title"] = Localizer["Contact Us"];
+    var mapUrl = Model.ContactInfo is not null && !string.IsNullOrWhiteSpace(Model.ContactInfo.Address)
+        ? $"https://www.google.com/maps?q={Uri.EscapeDataString(Model.ContactInfo.Address)}&output=embed"
+        : null;
+}
+
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="bg-light rounded p-5">
+            <div class="row g-4">
+                <div class="col-lg-5">
+                    <h1 class="mb-4">@Localizer["General Customer Care Support"]</h1>
+                    <h4 class="lh-base mb-4">
+                        @Localizer["Send us a message and we'll get back to you as soon as we can."]
+                    </h4>
+                    @if (mapUrl is not null)
+                    {
+                        <div class="rounded">
+                            <iframe class="rounded w-100" style="height: 425px; border: 0;"
+                                    src="@mapUrl" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    }
+                </div>
+
+                <div class="col-lg-7">
+                    @if (TempData["ContactSuccess"] is string successMessage)
+                    {
+                        <div class="alert alert-success">@successMessage</div>
+                    }
+
+                    <form asp-controller="Contact" asp-action="Submit" method="post" class="mb-4">
+                        @Html.AntiForgeryToken()
+                        <div class="row g-4">
+                            <div class="col-lg-6">
+                                <input asp-for="Form.Name" class="w-100 form-control border-0 py-3" placeholder="@Localizer["Your Name"]">
+                                <span asp-validation-for="Form.Name" class="text-danger"></span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input asp-for="Form.Email" class="w-100 form-control border-0 py-3" placeholder="@Localizer["Your Email"]">
+                                <span asp-validation-for="Form.Email" class="text-danger"></span>
+                            </div>
+                            <div class="col-12">
+                                <input asp-for="Form.Subject" class="w-100 form-control border-0 py-3" placeholder="@Localizer["Subject"]">
+                                <span asp-validation-for="Form.Subject" class="text-danger"></span>
+                            </div>
+                            <div class="col-12">
+                                <textarea asp-for="Form.Message" class="w-100 form-control border-0" rows="6" placeholder="@Localizer["Your Message"]"></textarea>
+                                <span asp-validation-for="Form.Message" class="text-danger"></span>
+                            </div>
+                            <div class="col-12">
+                                <button class="w-100 btn btn-primary form-control py-3" type="submit">@Localizer["Submit Now"]</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="row g-4">
+                        @if (Model.ContactInfo is not null)
+                        {
+                            <div class="col-xl-6">
+                                <div class="d-flex p-4 rounded bg-white">
+                                    <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
+                                    <div>
+                                        <h4>@Localizer["Address"]</h4>
+                                        <p class="mb-0">@Model.ContactInfo.Address</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="d-flex p-4 rounded bg-white">
+                                    <i class="fas fa-envelope fa-2x text-primary me-4"></i>
+                                    <div>
+                                        <h4>@Localizer["Mail Us"]</h4>
+                                        <p class="mb-0">@Model.ContactInfo.Email</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="d-flex p-4 rounded bg-white">
+                                    <i class="fa fa-phone-alt fa-2x text-primary me-4"></i>
+                                    <div>
+                                        <h4>@Localizer["Telephone"]</h4>
+                                        <p class="mb-0">@Model.ContactInfo.Phone</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        @if (Model.SocialLinks.Any())
+                        {
+                            <div class="col-xl-6">
+                                <div class="d-flex p-4 rounded bg-white">
+                                    <i class="fa fa-share-alt fa-2x text-primary me-4"></i>
+                                    <div>
+                                        <h4>@Localizer["Share"]</h4>
+                                        <div class="d-flex">
+                                            @foreach (var link in Model.SocialLinks)
+                                            {
+                                                <a class="me-3" href="@link.Url" target="_blank" rel="noopener">
+                                                    @*<i class="@link.IconClass text-dark link-hover"></i>*@
+                                                </a>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+﻿@model NewsHub.Web.Areas.Admin.ViewModels.Articles.ArticleFormViewModel
+@{ ViewData["Title"] = "New Article"; }
+
+<div class="card mb-4">
+    <div class="card-header"><h5 class="mb-0">@Localizer["Add"] @Localizer["Article"]</h5></div>
+    <div class="card-body">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+            <partial name="_Form" model="Model" />
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdn.jsdelivr.net/npm/tinymce@7/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '.rich-text-editor',
+            height: 400,
+            menubar: false,
+            plugins: 'lists link image table code wordcount',
+            toolbar: 'undo redo | blocks | bold italic | bullist numlist | link image table | code',
+            // keeps validation working: push editor content back into the textarea before jQuery-validate reads it
+            setup: function (editor) {
+                editor.on('change keyup', function () {
+                    editor.save();
+                });
+            }
+        });
+
+        // ensure TinyMCE flushes content into textareas before native form submit / unobtrusive validation runs
+        document.querySelector('form').addEventListener('submit', function () {
+            tinymce.triggerSave();
+        });
+    </script>
+}

@@ -1,0 +1,83 @@
+﻿@model NewsHub.Application.Common.Pagination.PagedResult<NewsHub.Application.Admin.DTOs.ArticleRatings.ArticleRatingAdminDto>
+
+@{
+    ViewData["Title"] = "Article Ratings";
+}
+
+<div class="card">
+    <div class="card-header d-flex align-items-center justify-content-between">
+        <h5 class="mb-0">@Localizer["Ratings"]</h5>
+    </div>
+
+    <div class="card-body">
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success">@TempData["Success"]</div>
+        }
+
+        <form method="get" class="row mb-3">
+            <div class="col-sm-4">
+                <input type="number" name="articleId" value="@ViewData["ArticleIdFilter"]"
+                       class="form-control" placeholder="@Localizer["Filter by"] Article Id" />
+            </div>
+            <div class="col-sm-auto">
+                <button type="submit" class="btn btn-outline-primary">@Localizer["Search"]</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="table-responsive text-nowrap">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>@Localizer["Article"]</th>
+                    <th>@Localizer["User"]</th>
+                    <th>@Localizer["Rating"]</th>
+                    <th>@Localizer["Date"]</th>
+                    <th>@Localizer["Actions"]</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var rating in Model.Items)
+                {
+                    <tr>
+                        <td>#@rating.ArticleId</td>
+                        <td>@rating.UserId</td>
+                        <td>
+                            <span class="badge bg-label-warning">@rating.Rating / 5</span>
+                        </td>
+                        <td>@rating.CreatedAt.ToString("g")</td>
+                        <td>
+                            <form asp-action="Delete" asp-route-id="@rating.Id" method="post"
+                                  onsubmit="return confirm('Delete this rating?');">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-sm btn-outline-danger">
+                                    <i class="bx bx-trash"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    @{
+        var totalPages = (int)Math.Ceiling(Model.TotalCount / (double)Model.PageSize);
+    }
+    @if (totalPages > 1)
+    {
+        <nav class="p-3">
+            <ul class="pagination justify-content-end mb-0">
+                @for (var p = 1; p <= totalPages; p++)
+                {
+                    <li class="page-item @(p == Model.Page ? "active" : "")">
+                        <a class="page-link" asp-action="Index"
+                           asp-route-page="@p"
+                           asp-route-articleId="@ViewData["ArticleIdFilter"]">@p</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    }
+</div>

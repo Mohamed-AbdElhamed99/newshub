@@ -1,0 +1,105 @@
+﻿@model NewsHub.Application.Common.Pagination.PagedResult<NewsHub.Application.Admin.DTOs.Subscriptions.SubscriptionAdminDto>
+
+@{
+    ViewData["Title"] = "Subscriptions";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5 class="mb-0">@Localizer["Subscriptions"]</h5>
+    </div>
+
+    <div class="card-body">
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success">@TempData["Success"]</div>
+        }
+
+        <form method="get" class="row mb-3">
+            <div class="col-sm-4">
+                <select name="isActive" class="form-select" onchange="this.form.submit()">
+                    <option value="">@Localizer["All"]</option>
+                    <option value="true" selected="@(ViewData["IsActiveFilter"]?.ToString() == "True")">@Localizer["Active"]</option>
+                    <option value="false" selected="@(ViewData["IsActiveFilter"]?.ToString() == "False")">@Localizer["Unsubscribed"]</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <div class="table-responsive text-nowrap">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>@Localizer["Email"]</th>
+                    <th>@Localizer["Status"]</th>
+                    <th>@Localizer["Subscribe Date"]</th>
+                    <th>@Localizer["Unsubscribed_Date"]</th>
+                    <th>@Localizer["Actions"]</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var sub in Model.Items)
+                {
+                    <tr>
+                        <td>@sub.Email</td>
+                        <td>
+                            @if (sub.IsActive)
+                            {
+                                <span class="badge bg-label-success">Active</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-label-secondary">Unsubscribed</span>
+                            }
+                        </td>
+                        <td>@sub.CreatedAt.ToString("g")</td>
+                        <td>@(sub.UnsubscribedAt?.ToString("g") ?? "-")</td>
+                        <td>
+                            <div class="dropdown">
+                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    @if (sub.IsActive)
+                                    {
+                                        <form asp-action="Deactivate" asp-route-id="@sub.Id" method="post">
+                                            @Html.AntiForgeryToken()
+                                            <button type="submit" class="dropdown-item">
+                                                <i class="bx bx-user-x me-1"></i> Deactivate
+                                            </button>
+                                        </form>
+                                    }
+                                    <form asp-action="Delete" asp-route-id="@sub.Id" method="post"
+                                          onsubmit="return confirm('Delete this subscription?');">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="dropdown-item">
+                                            <i class="bx bx-trash me-1"></i> @Localizer["Delete"]
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    @{
+        var totalPages = (int)Math.Ceiling(Model.TotalCount / (double)Model.PageSize);
+    }
+    @if (totalPages > 1)
+    {
+        <nav class="p-3">
+            <ul class="pagination justify-content-end mb-0">
+                @for (var p = 1; p <= totalPages; p++)
+                {
+                    <li class="page-item @(p == Model.Page ? "active" : "")">
+                        <a class="page-link" asp-action="Index" asp-route-page="@p"
+                           asp-route-isActive="@ViewData["IsActiveFilter"]">@p</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    }
+</div>

@@ -1,0 +1,44 @@
+﻿@using NewsHub.Web.Areas.Admin.ViewModels.Components
+@model NewsHub.Web.Areas.Admin.ViewModels.Components.FormViewModel
+
+<div class="card mb-4">
+    <div class="card-header">
+        <h5 class="mb-0">@Model.Title</h5>
+    </div>
+    <div class="card-body">
+        <form method="@Model.Method" action="@Model.ActionUrl">
+            @foreach (var field in Model.Fields)
+            {
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="@field.Name">@field.Label</label>
+                    <div class="col-sm-10">
+                        <div class="input-group input-group-merge">
+                            @if (!string.IsNullOrEmpty(field.Icon))
+                            {
+                                <span class="input-group-text"><i class="@field.Icon"></i></span>
+                            }
+
+                            @if (field.Type == FieldType.TextArea)
+                            {
+                                <textarea class="form-control" id="@field.Name" name="@field.Name"
+                                          placeholder="@field.Placeholder">@field.Value</textarea>
+                            }
+                            else
+                            {
+                                <input type="@field.Type.ToString().ToLower()" class="form-control"
+                                       id="@field.Name" name="@field.Name"
+                                       placeholder="@field.Placeholder" value="@field.Value"
+                                       @(field.Required ? "required" : "") />
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="row justify-content-end">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">@Model.SubmitLabel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

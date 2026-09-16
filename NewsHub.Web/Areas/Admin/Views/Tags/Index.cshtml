@@ -1,0 +1,72 @@
+﻿@model NewsHub.Application.Common.Pagination.PagedResult<NewsHub.Application.Admin.DTOs.Tags.TagAdminDto>
+@{ ViewData["Title"] = "Tags"; }
+
+<div class="card">
+    <div class="card-header d-flex align-items-center justify-content-between">
+        <h5 class="mb-0">@Localizer["Tags"]</h5>
+        <a asp-action="Create" class="btn btn-primary btn-sm"><i class="bx bx-plus"></i> @Localizer["Add"] @Localizer["Tag"]</a>
+    </div>
+
+    <div class="card-body">
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success">@TempData["Success"]</div>
+        }
+        <form method="get" class="row mb-3">
+            <div class="col-sm-4">
+                <input type="text" name="name" value="@ViewData["NameFilter"]" class="form-control" placeholder="Search by name..." />
+            </div>
+            <div class="col-sm-auto">
+                <button type="submit" class="btn btn-outline-primary">@Localizer["Search"]</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="table-responsive text-nowrap">
+        <table class="table table-hover">
+            <thead>
+                <tr><th>@Localizer["Name"]</th><th>@Localizer["Slug"]</th><th>@Localizer["Actions"]</th></tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var tag in Model.Items)
+                {
+                    <tr>
+                        <td><strong>@tag.Name</strong></td>
+                        <td>@tag.Slug</td>
+                        <td>
+                            <div class="dropdown">
+                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" asp-action="Edit" asp-route-id="@tag.Id">
+                                        <i class="bx bx-edit-alt me-1"></i> @Localizer["Edit"]
+                                    </a>
+                                    <form asp-action="Delete" asp-route-id="@tag.Id" method="post" onsubmit="return confirm('Delete this tag?');">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="dropdown-item"><i class="bx bx-trash me-1"></i> @Localizer["Delete"]</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    @{ var totalPages = (int)Math.Ceiling(Model.TotalCount / (double)Model.PageSize); }
+    @if (totalPages > 1)
+    {
+        <nav class="p-3">
+            <ul class="pagination justify-content-end mb-0">
+                @for (var p = 1; p <= totalPages; p++)
+                {
+                    <li class="page-item @(p == Model.Page ? "active" : "")">
+                        <a class="page-link" asp-action="Index" asp-route-page="@p" asp-route-name="@ViewData["NameFilter"]">@p</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    }
+</div>

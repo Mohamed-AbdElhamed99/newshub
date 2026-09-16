@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <data name="Dashboard" xml:space="preserve">
+    <value>لوحة التحكم</value>
+  </data>
+  <data name="Articles" xml:space="preserve">
+    <value>المقالات</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>الأقسام</value>
+  </data>
+  <data name="Tags" xml:space="preserve">
+    <value>الوسوم</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>التعليقات</value>
+  </data>
+  <data name="Ratings" xml:space="preserve">
+    <value>التقييمات</value>
+  </data>
+  <data name="Subscriptions" xml:space="preserve">
+    <value>الاشتراكات</value>
+  </data>
+  <data name="Contact Messages" xml:space="preserve">
+    <value>رسائل التواصل</value>
+  </data>
+  <data name="Site Settings" xml:space="preserve">
+    <value>إعدادات الموقع</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+  <data name="Remember Me" xml:space="preserve">
+    <value>تذكرني</value>
+  </data>
+  <data name="Sign in" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="Forgot Password?" xml:space="preserve">
+    <value>نسيت كلمة المرور؟</value>
+  </data>
+  <data name="Log Out" xml:space="preserve">
+    <value>تسجيل الخروج</value>
+  </data>
+  <data name="NewsHub" xml:space="preserve">
+    <value>نيوز هب</value>
+  </data>
+  <data name="Admin Panel" xml:space="preserve">
+    <value>لوحة الإدارة</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>المحتوى</value>
+  </data>
+  <data name="Engagement" xml:space="preserve">
+    <value>التفاعل</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>الإعدادات</value>
+  </data>
+  <data name="New Category" xml:space="preserve">
+    <value>قسم جديد</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="Search by" xml:space="preserve">
+    <value>البحث حسب</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>الصورة</value>
+  </data>
+  <data name="Slug" xml:space="preserve">
+    <value>الرابط المختصر</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>الإجراءات</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="Article" xml:space="preserve">
+    <value>مقال</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="Views" xml:space="preserve">
+    <value>مشاهدة</value>
+  </data>
+  <data name="Trending" xml:space="preserve">
+    <value>الأكثر تداولاً</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>نشر</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>اختر</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>القسم</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="IsTrending" xml:space="preserve">
+    <value>رائج</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>المستخدم</value>
+  </data>
+  <data name="All statuses" xml:space="preserve">
+    <value>كل الحالات</value>
+  </data>
+  <data name="Reject" xml:space="preserve">
+    <value>رفض</value>
+  </data>
+  <data name="Approve" xml:space="preserve">
+    <value>موافقة</value>
+  </data>
+  <data name="Excerpt" xml:space="preserve">
+    <value>مقتطف</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>الوصف</value>
+  </data>
+  <data name="Tag" xml:space="preserve">
+    <value>وسم</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>التاريخ</value>
+  </data>
+  <data name="Rating" xml:space="preserve">
+    <value>التقييم</value>
+  </data>
+  <data name="Subscribe Date" xml:space="preserve">
+    <value>تاريخ الاشتراك</value>
+  </data>
+  <data name="Unsubscribed_Date" xml:space="preserve">
+    <value>تاريخ إلغاء الاشتراك</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>الموضوع</value>
+  </data>
+  <data name="Contact Settings" xml:space="preserve">
+    <value>إعدادات التواصل</value>
+  </data>
+  <data name="Social Links" xml:space="preserve">
+    <value>روابط التواصل الاجتماعي</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>الهاتف</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>الترتيب</value>
+  </data>
+  <data name="Platform" xml:space="preserve">
+    <value>المنصة</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>الرابط</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="Contact Us" xml:space="preserve">
+    <value>اتصل بنا</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>إنشاء حساب</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>السابق</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>التالي</value>
+  </data>
+  <data name="Top Story" xml:space="preserve">
+    <value>أهم الأخبار</value>
+  </data>
+  <data name="Get every weekly update" xml:space="preserve">
+    <value>احصل على تحديثنا الأسبوعي</value>
+  </data>
+  <data name="One email a week with the stories our editors thought were worth your time. Unsubscribe whenever you like." xml:space="preserve">
+    <value>رسالة بريدية واحدة أسبوعياً تضم أهم القصص التي اختارها محررونا. يمكنك إلغاء الاشتراك في أي وقت.</value>
+  </data>
+  <data name="Subscribe Now" xml:space="preserve">
+    <value>اشترك الآن</value>
+  </data>
+  <data name="Latest News" xml:space="preserve">
+    <value>آخر الأخبار</value>
+  </data>
+  <data name="What's New" xml:space="preserve">
+    <value>الجديد</value>
+  </data>
+  <data name="Most Viewed" xml:space="preserve">
+    <value>الأكثر مشاهدة</value>
+  </data>
+  <data name="Stay Connected" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
+  <data name="Popular News" xml:space="preserve">
+    <value>الأخبار الشائعة</value>
+  </data>
+  <data name="View More" xml:space="preserve">
+    <value>عرض المزيد</value>
+  </data>
+  <data name="Trending Tags" xml:space="preserve">
+    <value>الوسوم الرائجة</value>
+  </data>
+  <data name="Get In Touch" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
+  <data name="Recent Posts" xml:space="preserve">
+    <value>أحدث المنشورات</value>
+  </data>
+  <data name="Our Gallery" xml:space="preserve">
+    <value>معرض الصور</value>
+  </data>
+  <data name="All rights reserved." xml:space="preserve">
+    <value>جميع الحقوق محفوظة.</value>
+  </data>
+  <data name="General Customer Care Support" xml:space="preserve">
+    <value>خدمة ودعم العملاء</value>
+  </data>
+  <data name="Send us a message and we'll get back to you as soon as we can." xml:space="preserve">
+    <value>أرسل لنا رسالة وسنقوم بالرد عليك في أقرب وقت ممكن.</value>
+  </data>
+  <data name="Your Name" xml:space="preserve">
+    <value>اسمك</value>
+  </data>
+  <data name="Your Email" xml:space="preserve">
+    <value>بريدك الإلكتروني</value>
+  </data>
+  <data name="Your Message" xml:space="preserve">
+    <value>رسالتك</value>
+  </data>
+  <data name="Submit Now" xml:space="preserve">
+    <value>إرسال</value>
+  </data>
+  <data name="Mail Us" xml:space="preserve">
+    <value>راسلنا</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>الهاتف</value>
+  </data>
+  <data name="Share" xml:space="preserve">
+    <value>مشاركة</value>
+  </data>
+  <data name="Rate this article" xml:space="preserve">
+    <value>قيّم هذا المقال</value>
+  </data>
+  <data name="Excellent" xml:space="preserve">
+    <value>ممتاز</value>
+  </data>
+  <data name="Good" xml:space="preserve">
+    <value>جيد</value>
+  </data>
+  <data name="Average" xml:space="preserve">
+    <value>متوسط</value>
+  </data>
+  <data name="Poor" xml:space="preserve">
+    <value>ضعيف</value>
+  </data>
+  <data name="Very poor" xml:space="preserve">
+    <value>ضعيف جداً</value>
+  </data>
+  <data name="Submit rating" xml:space="preserve">
+    <value>إرسال التقييم</value>
+  </data>
+  <data name="Sign in to rate this article." xml:space="preserve">
+    <value>سجّل الدخول لتقييم هذا المقال.</value>
+  </data>
+  <data name="No comments yet — be the first to say something." xml:space="preserve">
+    <value>لا توجد تعليقات بعد — كن أول من يعلّق.</value>
+  </data>
+  <data name="Reader" xml:space="preserve">
+    <value>قارئ</value>
+  </data>
+  <data name="Leave a comment" xml:space="preserve">
+    <value>أضف تعليقاً</value>
+  </data>
+  <data name="Your comment" xml:space="preserve">
+    <value>تعليقك</value>
+  </data>
+  <data name="Post comment" xml:space="preserve">
+    <value>نشر التعليق</value>
+  </data>
+  <data name="Sign in to leave a comment." xml:space="preserve">
+    <value>سجّل الدخول لإضافة تعليق.</value>
+  </data>
+  <data name="Forgot password" xml:space="preserve">
+    <value>نسيت كلمة المرور</value>
+  </data>
+  <data name="Reset your password" xml:space="preserve">
+    <value>إعادة تعيين كلمة المرور</value>
+  </data>
+  <data name="Enter the email on your account and we'll send you a link to reset your password." xml:space="preserve">
+    <value>أدخل البريد الإلكتروني المرتبط بحسابك وسنرسل لك رابطاً لإعادة تعيين كلمة المرور.</value>
+  </data>
+  <data name="Send reset link" xml:space="preserve">
+    <value>إرسال رابط إعادة التعيين</value>
+  </data>
+  <data name="Don't have an account?" xml:space="preserve">
+    <value>ليس لديك حساب؟</value>
+  </data>
+  <data name="Create one" xml:space="preserve">
+    <value>أنشئ حساباً</value>
+  </data>
+  <data name="Create account" xml:space="preserve">
+    <value>إنشاء حساب</value>
+  </data>
+  <data name="Create your account" xml:space="preserve">
+    <value>أنشئ حسابك</value>
+  </data>
+  <data name="Full Name" xml:space="preserve">
+    <value>الاسم الكامل</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>اسم المستخدم</value>
+  </data>
+  <data name="Confirm Password" xml:space="preserve">
+    <value>تأكيد كلمة المرور</value>
+  </data>
+  <data name="Already have an account?" xml:space="preserve">
+    <value>لديك حساب بالفعل؟</value>
+  </data>
+  <data name="Reset password" xml:space="preserve">
+    <value>إعادة تعيين كلمة المرور</value>
+  </data>
+  <data name="Choose a new password" xml:space="preserve">
+    <value>اختر كلمة مرور جديدة</value>
+  </data>
+  <data name="New Password" xml:space="preserve">
+    <value>كلمة المرور الجديدة</value>
+  </data>
+  <data name="Confirm New Password" xml:space="preserve">
+    <value>تأكيد كلمة المرور الجديدة</value>
+  </data>
+  <data name="Verify email" xml:space="preserve">
+    <value>تأكيد البريد الإلكتروني</value>
+  </data>
+  <data name="Email confirmed" xml:space="preserve">
+    <value>تم تأكيد البريد الإلكتروني</value>
+  </data>
+  <data name="Your email address has been verified — you can sign in now." xml:space="preserve">
+    <value>تم التحقق من بريدك الإلكتروني — يمكنك تسجيل الدخول الآن.</value>
+  </data>
+  <data name="Verification unavailable" xml:space="preserve">
+    <value>التحقق غير متاح</value>
+  </data>
+</root>

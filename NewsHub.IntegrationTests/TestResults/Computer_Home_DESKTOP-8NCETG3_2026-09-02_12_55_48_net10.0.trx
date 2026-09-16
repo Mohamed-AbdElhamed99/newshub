@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="fc3a46c9-1a9f-493e-9865-4d56d054383c" name="Computer Home@DESKTOP-8NCETG3 2026-09-02 12:55:48" runUser="DESKTOP-8NCETG3\Computer Home" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-02T12:55:48.6041380+03:00" queuing="2026-09-02T12:55:48.6041382+03:00" start="2026-09-02T12:55:47.5506059+03:00" finish="2026-09-02T12:55:48.6083544+03:00" />
+  <TestSettings name="default" id="523890b2-c4ac-4190-9db6-a356ba650f19">
+    <Deployment runDeploymentRoot="Computer_Home_DESKTOP-8NCETG3_2026-09-02_12_55_48" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="a735df1a-b47b-4448-b724-6d3c8601e706" testId="e158cb89-cb95-38fa-a3a3-f61636d72ab0" testName="NewsHub.IntegrationTests.UnitTest1.Test1" computerName="DESKTOP-8NCETG3" duration="00:00:00.0027037" startTime="2026-09-02T12:55:48.4426877+03:00" endTime="2026-09-02T12:55:48.4522806+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a735df1a-b47b-4448-b724-6d3c8601e706" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="NewsHub.IntegrationTests.UnitTest1.Test1" storage="d:\c#\1\newshub\newshub\newshub.integrationtests\bin\debug\net10.0\newshub.integrationtests.dll" id="e158cb89-cb95-38fa-a3a3-f61636d72ab0">
+      <Execution id="a735df1a-b47b-4448-b724-6d3c8601e706" />
+      <TestMethod codeBase="D:\C#\1\NewsHub\NewsHub\NewsHub.IntegrationTests\bin\Debug\net10.0\NewsHub.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="NewsHub.IntegrationTests.UnitTest1" name="Test1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="e158cb89-cb95-38fa-a3a3-f61636d72ab0" executionId="a735df1a-b47b-4448-b724-6d3c8601e706" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.9)&#xD;
+[xUnit.net 00:00:00.09]   Discovering: NewsHub.IntegrationTests&#xD;
+[xUnit.net 00:00:00.15]   Discovered:  NewsHub.IntegrationTests&#xD;
+[xUnit.net 00:00:00.18]   Starting:    NewsHub.IntegrationTests&#xD;
+[xUnit.net 00:00:00.24]   Finished:    NewsHub.IntegrationTests&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

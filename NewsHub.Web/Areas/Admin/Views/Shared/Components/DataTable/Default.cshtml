@@ -1,0 +1,50 @@
+﻿@model NewsHub.Web.Areas.Admin.ViewModels.Components.TableViewModel
+
+<div class="card">
+    <h5 class="card-header">@Model.Title</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table @(Model.Hoverable ? "table-hover" : "")">
+            <thead>
+                <tr>
+                    @foreach (var col in Model.Columns)
+                    {
+                        <th>@col.Header</th>
+                    }
+                    @if (Model.Rows.Any(r => r.Actions.Any()))
+                    {
+                        <th>@Localizer["Actions"]</th>
+                    }
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var row in Model.Rows)
+                {
+                    <tr>
+                        @foreach (var col in Model.Columns)
+                        {
+                            <td>@(row.Cells.TryGetValue(col.PropertyName, out var val) ? val : "")</td>
+                        }
+                        @if (row.Actions.Any())
+                        {
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        @foreach (var action in row.Actions)
+                                        {
+                                            <a class="@action.CssClass" href="@action.Url">
+                                                <i class="@action.Icon me-1"></i> @action.Label
+                                            </a>
+                                        }
+                                    </div>
+                                </div>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+﻿@model NewsHub.Web.Areas.Admin.ViewModels.Tags.TagFormViewModel
+@{ ViewData["Title"] = "New Tag"; }
+
+<div class="card mb-4">
+    <div class="card-header"><h5 class="mb-0">New Tag</h5></div>
+    <div class="card-body">
+        <form asp-action="Create" method="post">
+            @Html.AntiForgeryToken()
+            <partial name="_Form" model="Model" />
+        </form>
+    </div>
+</div>
+
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

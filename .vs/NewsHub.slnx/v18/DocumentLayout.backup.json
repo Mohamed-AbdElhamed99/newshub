@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C#\\1\\NewsHub\\NewsHub\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{50118EBF-BA21-EBE9-622F-109925B2EC76}|NewsHub.Web\\NewsHub.Web.csproj|d:\\c#\\1\\newshub\\newshub\\newshub.web\\areas\\admin\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50118EBF-BA21-EBE9-622F-109925B2EC76}|NewsHub.Web\\NewsHub.Web.csproj|solutionrelative:newshub.web\\areas\\admin\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7974A92B-DE28-F5BE-6769-8741D31B9866}|NewsHub.Application\\NewsHub.Application.csproj|d:\\c#\\1\\newshub\\newshub\\newshub.application\\admin\\services\\categoryadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974A92B-DE28-F5BE-6769-8741D31B9866}|NewsHub.Application\\NewsHub.Application.csproj|solutionrelative:newshub.application\\admin\\services\\categoryadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50118EBF-BA21-EBE9-622F-109925B2EC76}|NewsHub.Web\\NewsHub.Web.csproj|d:\\c#\\1\\newshub\\newshub\\newshub.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50118EBF-BA21-EBE9-622F-109925B2EC76}|NewsHub.Web\\NewsHub.Web.csproj|solutionrelative:newshub.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Web\\Areas\\Admin\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "NewsHub.Web\\Areas\\Admin\\Controllers\\CategoriesController.cs",
+              "ToolTip": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Web\\Areas\\Admin\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "NewsHub.Web\\Areas\\Admin\\Controllers\\CategoriesController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAiwDwAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-12T09:36:15.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CategoryAdminService.cs",
+              "DocumentMoniker": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Application\\Admin\\Services\\CategoryAdminService.cs",
+              "RelativeDocumentMoniker": "NewsHub.Application\\Admin\\Services\\CategoryAdminService.cs",
+              "ToolTip": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Application\\Admin\\Services\\CategoryAdminService.cs",
+              "RelativeToolTip": "NewsHub.Application\\Admin\\Services\\CategoryAdminService.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAswGAAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-12T09:36:02.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Web\\Program.cs",
+              "RelativeDocumentMoniker": "NewsHub.Web\\Program.cs",
+              "ToolTip": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Web\\Program.cs",
+              "RelativeToolTip": "NewsHub.Web\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-12T09:33:49.049Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

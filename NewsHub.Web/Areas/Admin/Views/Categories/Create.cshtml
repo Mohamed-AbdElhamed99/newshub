@@ -1,0 +1,18 @@
+﻿@model NewsHub.Web.Areas.Admin.ViewModels.Categories.CategoryFormViewModel
+@{
+    ViewData["Title"] = "New Category";
+}
+
+<div class="card mb-4">
+    <div class="card-header"><h5 class="mb-0">@Localizer["Add"] @Localizer["Category"]</h5></div>
+    <div class="card-body">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+            <partial name="_Form" model="Model" />
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,52 @@
+﻿@model NewsHub.Web.Areas.Admin.ViewModels.Articles.ArticleTranslationViewModel
+@{
+    var prefix = ViewData["Prefix"]?.ToString() ?? "";
+    ViewData.TemplateInfo.HtmlFieldPrefix = prefix;
+}
+
+<div class="row mb-3">
+    <label class="col-sm-2 col-form-label" asp-for="Title">@Localizer["Title"]</label>
+    <div class="col-sm-10">
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <label class="col-sm-2 col-form-label" asp-for="Slug">@Localizer["Slug"]</label>
+    <div class="col-sm-10">
+        <input asp-for="Slug" class="form-control" dir="ltr" />
+        <span asp-validation-for="Slug" class="text-danger"></span>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <label class="col-sm-2 col-form-label" asp-for="Content">@Localizer["Content"]</label>
+    <div class="col-sm-10">
+        <textarea asp-for="Content" rows="8" class="form-control rich-text-editor" id="@(prefix)_Content"></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <label class="col-sm-2 col-form-label" asp-for="Excerpt">@Localizer["Excerpt"]</label>
+    <div class="col-sm-10">
+        <textarea asp-for="Excerpt" rows="2" class="form-control"></textarea>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <label class="col-sm-2 col-form-label" asp-for="MetaTitle"></label>
+    <div class="col-sm-10">
+        <input asp-for="MetaTitle" class="form-control" />
+        <span asp-validation-for="MetaTitle" class="text-danger"></span>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <label class="col-sm-2 col-form-label" asp-for="MetaDescription"></label>
+    <div class="col-sm-10">
+        <textarea asp-for="MetaDescription" rows="2" class="form-control"></textarea>
+        <span asp-validation-for="MetaDescription" class="text-danger"></span>
+    </div>
+</div>

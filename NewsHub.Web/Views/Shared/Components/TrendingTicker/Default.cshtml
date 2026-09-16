@@ -1,0 +1,23 @@
+﻿@using NewsHub.Application.Site.DTOs.Articles
+@model TrendingArticleDto?
+
+@if (Model is not null)
+{
+    <div class="top-info flex-grow-0">
+        <span class="rounded-circle btn-sm-square bg-primary me-2">
+            <i class="fas fa-bolt text-white"></i>
+        </span>
+        <div class="pe-2 me-3 border-end border-white d-flex align-items-center">
+            <p class="mb-0 text-white fs-6 fw-normal">@Localizer["Trending"]</p>
+        </div>
+        <div class="overflow-hidden" style="width: 735px;">
+            <div id="note" class="ps-2">
+                <img src="@Model.ImageUrl" class="img-fluid rounded-circle border border-3 border-primary me-2"
+                     style="width: 30px; height: 30px;" alt="@Model.Title">
+                <a asp-controller="Article" asp-action="Details" asp-route-slug="@Model.Slug">
+                    <p class="text-white mb-0 link-hover">@Model.Title</p>
+                </a>
+            </div>
+        </div>
+    </div>
+}

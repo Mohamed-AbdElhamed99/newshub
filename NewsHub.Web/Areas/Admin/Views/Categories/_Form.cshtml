@@ -1,0 +1,90 @@
+﻿@model NewsHub.Web.Areas.Admin.ViewModels.Categories.CategoryFormViewModel
+
+<div asp-validation-summary="ModelOnly" class="alert alert-danger d-none" id="validationSummary"></div>
+@if (!ViewData.ModelState.IsValid)
+{
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+}
+
+<div class="row mb-3">
+    <label class="col-sm-2 col-form-label">@Localizer["Image"]</label>
+    <div class="col-sm-10">
+        @if (!string.IsNullOrEmpty(Model.ExistingImagePath))
+        {
+            <img src="@Model.ExistingImagePath" width="80" height="80" class="rounded mb-2 d-block" alt="Current image" />
+        }
+        <input asp-for="ImageFile" type="file" class="form-control" accept=".jpg,.jpeg,.png,.webp" />
+        <span asp-validation-for="ImageFile" class="text-danger"></span>
+        <div class="form-text">JPG, PNG or WEBP — max 2MB. Leave empty to keep current image.</div>
+    </div>
+</div>
+
+<input type="hidden" asp-for="Id" />
+<input type="hidden" asp-for="English.LanguageCode" />
+<input type="hidden" asp-for="Arabic.LanguageCode" />
+
+<ul class="nav nav-tabs mb-3" role="tablist">
+    <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-en" type="button">English</button>
+    </li>
+    <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-ar" type="button">Arabic</button>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="tab-en">
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" asp-for="English.Name">@Localizer["Name"]</label>
+            <div class="col-sm-10">
+                <input asp-for="English.Name" class="form-control" placeholder="e.g. Sports" />
+                <span asp-validation-for="English.Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" asp-for="English.Slug">@Localizer["Slug"]</label>
+            <div class="col-sm-10">
+                <input asp-for="English.Slug" class="form-control" placeholder="e.g. sports" />
+                <span asp-validation-for="English.Slug" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" asp-for="English.Description">@Localizer["Description"]</label>
+            <div class="col-sm-10">
+                <textarea asp-for="English.Description" class="form-control"></textarea>
+                <span asp-validation-for="English.Description" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="tab-ar" dir="rtl">
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" asp-for="Arabic.Name">@Localizer["Name"]</label>
+            <div class="col-sm-10">
+                <input asp-for="Arabic.Name" class="form-control" placeholder="مثال: رياضة" />
+                <span asp-validation-for="Arabic.Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" asp-for="Arabic.Slug">@Localizer["Slug"]</label>
+            <div class="col-sm-10">
+                <input asp-for="Arabic.Slug" class="form-control" placeholder="e.g. sports-ar" dir="ltr" />
+                <span asp-validation-for="Arabic.Slug" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" asp-for="Arabic.Description">@Localizer["Description"]</label>
+            <div class="col-sm-10">
+                <textarea asp-for="Arabic.Description" class="form-control"></textarea>
+                <span asp-validation-for="Arabic.Description" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-end">
+    <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary">@Localizer["Save"]</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">@Localizer["Cancel"]</a>
+    </div>
+</div>

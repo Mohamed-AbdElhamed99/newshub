@@ -1,0 +1,107 @@
+﻿@model NewsHub.Application.Common.Pagination.PagedResult<NewsHub.Application.Admin.DTOs.ContactMessages.ContactMessageAdminDto>
+
+@{
+    ViewData["Title"] = "Contact Messages";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5 class="mb-0">@Localizer["Contact Messages"]</h5>
+    </div>
+
+    <div class="card-body">
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success">@TempData["Success"]</div>
+        }
+
+        <form method="get" class="row mb-3">
+            <div class="col-sm-4">
+                <select name="isRead" class="form-select" onchange="this.form.submit()">
+                    <option value="">@Localizer["All"]</option>
+                    <option value="false" selected="@(ViewData["IsReadFilter"]?.ToString() == "False")">@Localizer["Unread"]</option>
+                    <option value="true" selected="@(ViewData["IsReadFilter"]?.ToString() == "True")">@Localizer["Read"]</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <div class="table-responsive text-nowrap">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>@Localizer["Name"]</th>
+                    <th>@Localizer["Email"]</th>
+                    <th>@Localizer["Subject"]</th>
+                    <th>@Localizer["Status"]</th>
+                    <th>@Localizer["Date"]</th>
+                    <th>@Localizer["Actions"]</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var message in Model.Items)
+                {
+                    <tr class="@(!message.IsRead ? "fw-bold" : "")">
+                        <td>@message.Name</td>
+                        <td>@message.Email</td>
+                        <td>@message.Subject</td>
+                        <td>
+                            @if (message.IsRead)
+                            {
+                                <span class="badge bg-label-secondary">Read</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-label-primary">Unread</span>
+                            }
+                        </td>
+                        <td>@message.CreatedAt.ToString("g")</td>
+                        <td>
+                            <div class="dropdown">
+                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    @if (!message.IsRead)
+                                    {
+                                        <form asp-action="MarkAsRead" asp-route-id="@message.Id" method="post">
+                                            @Html.AntiForgeryToken()
+                                            <button type="submit" class="dropdown-item">
+                                                <i class="bx bx-envelope-open me-1"></i> Mark as read
+                                            </button>
+                                        </form>
+                                    }
+                                    <form asp-action="Delete" asp-route-id="@message.Id" method="post"
+                                          onsubmit="return confirm('Delete this message?');">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="dropdown-item">
+                                            <i class="bx bx-trash me-1"></i> @Localizer["Delete"]
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    @{
+        var totalPages = (int)Math.Ceiling(Model.TotalCount / (double)Model.PageSize);
+    }
+    @if (totalPages > 1)
+    {
+        <nav class="p-3">
+            <ul class="pagination justify-content-end mb-0">
+                @for (var p = 1; p <= totalPages; p++)
+                {
+                    <li class="page-item @(p == Model.Page ? "active" : "")">
+                        <a class="page-link" asp-action="Index" asp-route-page="@p"
+                           asp-route-isRead="@ViewData["IsReadFilter"]">@p</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    }
+</div>

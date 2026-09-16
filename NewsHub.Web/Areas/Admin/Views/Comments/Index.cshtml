@@ -1,0 +1,120 @@
+﻿@model NewsHub.Application.Common.Pagination.PagedResult<NewsHub.Application.Admin.DTOs.Comments.CommentAdminDto>
+@using NewsHub.Domain.Enums
+
+@{
+    ViewData["Title"] = "Comments";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5 class="mb-0">@Localizer["Comments"]</h5>
+    </div>
+
+    <div class="card-body">
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success">@TempData["Success"]</div>
+        }
+
+        <form method="get" class="row mb-3">
+            <div class="col-sm-4">
+                <select name="status" class="form-select" onchange="this.form.submit()">
+                    <option value="">@Localizer["All statuses"]</option>
+                    @foreach (var s in Enum.GetValues<CommentStatus>())
+                    {
+                        <option value="@s" selected="@(ViewData["StatusFilter"]?.ToString() == s.ToString())">@s</option>
+                    }
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <div class="table-responsive text-nowrap">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>@Localizer["Article"]</th>
+                    <th>@Localizer["User"]</th>
+                    <th>@Localizer["Content"]</th>
+                    <th>@Localizer["Status"]</th>
+                    <th>@Localizer["Created"]</th>
+                    <th>@Localizer["Actions"]</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var comment in Model.Items)
+                {
+                    <tr>
+                        <td>#@comment.ArticleId</td>
+                        <td>@comment.UserId</td>
+                        <td style="max-width:300px;" class="text-truncate">@comment.Content</td>
+                        <td>
+                            @{
+                                var badgeClass = comment.Status switch
+                                {
+                                    CommentStatus.Approved => "bg-label-success",
+                                    CommentStatus.Rejected => "bg-label-danger",
+                                    _ => "bg-label-warning"
+                                };
+                            }
+                            <span class="badge @badgeClass">@comment.Status</span>
+                        </td>
+                        <td>@comment.CreatedAt.ToString("g")</td>
+                        <td>
+                            <div class="dropdown">
+                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    @if (comment.Status != CommentStatus.Approved)
+                                    {
+                                        <form asp-action="Approve" asp-route-id="@comment.Id" method="post">
+                                            @Html.AntiForgeryToken()
+                                            <button type="submit" class="dropdown-item">
+                                                <i class="bx bx-check text-success me-1"></i> @Localizer["Approve"]
+                                            </button>
+                                        </form>
+                                    }
+                                    @if (comment.Status != CommentStatus.Rejected)
+                                    {
+                                        <form asp-action="Reject" asp-route-id="@comment.Id" method="post">
+                                            @Html.AntiForgeryToken()
+                                            <button type="submit" class="dropdown-item">
+                                                <i class="bx bx-x text-warning me-1"></i> @Localizer["Reject"]
+                                            </button>
+                                        </form>
+                                    }
+                                    <form asp-action="Delete" asp-route-id="@comment.Id" method="post"
+                                          onsubmit="return confirm('Delete this comment?');">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="dropdown-item">
+                                            <i class="bx bx-trash me-1"></i> @Localizer["Delete"]
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    @{
+        var totalPages = (int)Math.Ceiling(Model.TotalCount / (double)Model.PageSize);
+    }
+    @if (totalPages > 1)
+    {
+        <nav class="p-3">
+            <ul class="pagination justify-content-end mb-0">
+                @for (var p = 1; p <= totalPages; p++)
+                {
+                    <li class="page-item @(p == Model.Page ? "active" : "")">
+                        <a class="page-link" asp-action="Index" asp-route-page="@p"
+                           asp-route-status="@ViewData["StatusFilter"]">@p</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    }
+</div>

@@ -1,0 +1,57 @@
+﻿/* ~/site/css/rtl.css — loaded only when dir="rtl" */
+
+/* Note ticker animation direction */
+[dir="rtl"] #note {
+    animation-name: noteAnimateRtl;
+}
+
+@keyframes noteAnimateRtl {
+    from { right: -735px; }
+    to { right: 735px; }
+}
+
+/* Dropdown caret spacing (margin-left in style.css won't auto-flip since it's not a logical property) */
+[dir="rtl"] .navbar .dropdown-toggle::after {
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+/* Owl carousel nav buttons pinned via right/left in style.css */
+[dir="rtl"] .latest-news .latest-news-carousel.owl-carousel .owl-nav .owl-prev,
+[dir="rtl"] .populer-news .whats-carousel.owl-carousel .owl-nav .owl-prev {
+    right: auto;
+    left: 70px;
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+[dir="rtl"] .latest-news .latest-news-carousel.owl-carousel .owl-nav .owl-next,
+[dir="rtl"] .populer-news .whats-carousel.owl-carousel .owl-nav .owl-next {
+    right: auto;
+    left: 0;
+    margin-left: 10px;
+}
+
+/* Back-to-top button */
+[dir="rtl"] .back-to-top {
+    right: auto;
+    left: 30px;
+}
+
+/* Fredoka/Raleway don't cover Arabic — fall back to Cairo for RTL content */
+[dir="rtl"] body,
+[dir="rtl"] .navbar .navbar-nav .nav-link,
+[dir="rtl"] .topbar .top-link,
+[dir="rtl"] .topbar .top-info {
+    font-family: 'Cairo', 'Open Sans', sans-serif;
+}
+
+/* Weather widget / topbar icon spacing (me-2 flips fine via Bootstrap RTL, but inline style width doesn't) */
+[dir="rtl"] #weatherWidget .ms-2 {
+    margin-right: 0.5rem !important;
+    margin-left: 0 !important;
+}
+
+a{
+    text-decoration: none !important;
+}

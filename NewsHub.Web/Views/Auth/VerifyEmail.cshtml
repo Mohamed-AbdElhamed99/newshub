@@ -1,0 +1,28 @@
+﻿@using NewsHub.Web.Resources
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
+@{
+    ViewData["Title"] = Localizer["Verify email"];
+    bool success = ViewBag.Success ?? false;
+}
+
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="bg-light rounded p-5 text-center">
+                    @if (success)
+                    {
+                        <h1 class="mb-4">@Localizer["Email confirmed"]</h1>
+                        <p class="text-body mb-4">@Localizer["Your email address has been verified — you can sign in now."]</p>
+                        <a asp-controller="Auth" asp-action="Login" class="btn btn-primary rounded-pill px-5 py-3">@Localizer["Sign in"]</a>
+                    }
+                    else
+                    {
+                        <h1 class="mb-4">@Localizer["Verification unavailable"]</h1>
+                        <p class="text-body mb-0">@ViewBag.Message</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

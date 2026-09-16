@@ -1,0 +1,18 @@
+﻿@model NewsHub.Web.Areas.Admin.ViewModels.SocialLinks.SocialLinkFormViewModel
+@{
+    ViewData["Title"] = "Edit Social Link";
+}
+
+<div class="card mb-4">
+    <div class="card-header"><h5 class="mb-0">@Localizer["Edit"] @Localizer["Social Links"]</h5></div>
+    <div class="card-body">
+        <form asp-action="EditSocialLink" asp-route-id="@Model.Id" method="post">
+            @Html.AntiForgeryToken()
+            <partial name="SocialLinks/_Form" model="Model" />
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

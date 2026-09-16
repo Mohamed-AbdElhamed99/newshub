@@ -1,0 +1,60 @@
+﻿@model NewsHub.Web.Areas.Admin.ViewModels.LoginViewModel
+@{
+    Layout = "_AuthLayout";
+    ViewData["Title"] = "Login";
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="app-brand justify-content-center">
+            <a asp-area="Admin" asp-controller="Account" asp-action="Login" class="app-brand-link gap-2">
+                <span class="app-brand-logo demo"><i class="bx bx-news bx-lg text-primary"></i></span>
+                <span class="app-brand-text demo text-body fw-bolder">NewsHub</span>
+            </a>
+        </div>
+
+        <h4 class="mb-2">Welcome to NewsHub Admin! 👋</h4>
+        <p class="mb-4">Please sign in to your account</p>
+
+        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert" style="@(ViewData.ModelState.ErrorCount > 0 ? "" : "display:none;")"></div>
+
+        <form asp-area="Admin" asp-controller="Account" asp-action="Login" method="post" class="mb-3">
+            <input type="hidden" asp-for="ReturnUrl" />
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control" placeholder="Enter your email" autofocus />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 form-password-toggle">
+                <div class="d-flex justify-content-between">
+                    <label asp-for="Password" class="form-label"></label>
+                    <a asp-area="Admin" asp-controller="Account" asp-action="ForgotPassword">
+                        <small>Forgot Password?</small>
+                    </a>
+                </div>
+                <div class="input-group input-group-merge">
+                    <input asp-for="Password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
+                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                </div>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <div class="form-check">
+                    <input asp-for="RememberMe" class="form-check-input" />
+                    <label asp-for="RememberMe" class="form-check-label"></label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

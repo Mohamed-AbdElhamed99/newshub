@@ -1,0 +1,5 @@
+﻿@model NewsHub.Web.Models.Article.ArticleListViewModel
+@{
+    ViewData["Title"] = Model.Heading;
+}
+@await Html.PartialAsync("~/Views/Article/Index.cshtml", Model)

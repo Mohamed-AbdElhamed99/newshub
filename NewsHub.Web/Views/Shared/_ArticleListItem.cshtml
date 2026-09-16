@@ -1,0 +1,36 @@
+﻿@using NewsHub.Application.Site.DTOs.Articles
+@using NewsHub.Web.Resources
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
+@model LatestArticleDto
+@{
+    var categoryName = ViewData["CategoryName"] as string;
+    var showMeta = ViewData["ShowMeta"] as bool? ?? false;
+}
+
+<div class="row g-4 align-items-center features-item">
+    <div class="col-5">
+        <div class="overflow-hidden rounded">
+            <img src="@Model.ImageUrl" class="img-zoomin img-fluid rounded w-100" alt="@Model.Title">
+        </div>
+    </div>
+    <div class="col-7">
+        <div class="features-content d-flex flex-column">
+            @if (!string.IsNullOrWhiteSpace(categoryName))
+            {
+                <p class="text-uppercase mb-2">@categoryName</p>
+            }
+            <a asp-controller="Article" asp-action="Details" asp-route-slug="@Model.Slug" class="h6">@Model.Title</a>
+            @if (showMeta)
+            {
+                <small><i class="fa fa-eye"></i> @Model.ViewCount.ToString("N0") @Localizer["Views"]</small>
+                <small><i class="fa fa-comment-dots"></i> @Model.CommentCount @Localizer["Comments"]</small>
+            }
+            else
+            {
+                <small class="text-body d-block">
+                    <i class="fas fa-calendar-alt me-1"></i> @Model.PublishedAt.ToString("MMM d, yyyy")
+                </small>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "dgSpecHash": "UBKBaXX1jVQ=",
+  "success": true,
+  "projectFilePath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Application\\NewsHub.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Computer Home\\.nuget\\packages\\anglesharp\\1.7.2\\anglesharp.1.7.2.nupkg.sha512",
+    "C:\\Users\\Computer Home\\.nuget\\packages\\anglesharp.css\\1.0.2\\anglesharp.css.1.0.2.nupkg.sha512",
+    "C:\\Users\\Computer Home\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
+    "C:\\Users\\Computer Home\\.nuget\\packages\\hangfire.core\\1.8.25\\hangfire.core.1.8.25.nupkg.sha512",
+    "C:\\Users\\Computer Home\\.nuget\\packages\\htmlsanitizer\\9.2.1039\\htmlsanitizer.9.2.1039.nupkg.sha512",
+    "C:\\Users\\Computer Home\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\10.0.12\\microsoft.extensions.configuration.abstractions.10.0.12.nupkg.sha512",
+    "C:\\Users\\Computer Home\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.12\\microsoft.extensions.dependencyinjection.abstractions.10.0.12.nupkg.sha512",
+    "C:\\Users\\Computer Home\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.12\\microsoft.extensions.primitives.10.0.12.nupkg.sha512",
+    "C:\\Users\\Computer Home\\.nuget\\packages\\newtonsoft.json\\11.0.1\\newtonsoft.json.11.0.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'Newtonsoft.Json' 11.0.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-5crp-9r3c-p9vr",
+      "projectPath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Application\\NewsHub.Application.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\C#\\1\\NewsHub\\NewsHub\\NewsHub.Application\\NewsHub.Application.csproj",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}

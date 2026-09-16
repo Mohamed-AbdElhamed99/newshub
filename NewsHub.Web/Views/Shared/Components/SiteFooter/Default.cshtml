@@ -1,0 +1,112 @@
+﻿@using NewsHub.Web.Models.Shared
+@using NewsHub.Web.Resources
+@model FooterViewModel
+
+<div class="container-fluid bg-dark footer py-5">
+    <div class="container py-5">
+        <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+            <div class="row g-4">
+                <div class="col-lg-3">
+                    <a asp-controller="Home" asp-action="Index" class="d-flex flex-column flex-wrap">
+                        <p class="text-white mb-0 display-6">@Localizer["NewsHub"]</p>
+                    </a>
+                </div>
+                <div class="col-lg-9">
+                    <form asp-controller="Subscription" asp-action="Subscribe" method="post"
+                          class="d-flex position-relative rounded-pill overflow-hidden">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="returnUrl" value="@Context.Request.Path" />
+                        <input name="email" class="form-control border-0 w-100 py-3 rounded-pill" type="email"
+                               placeholder="you@example.com" required>
+                        <button type="submit" class="btn btn-primary border-0 py-3 px-5 rounded-pill text-white position-absolute" style="top:0; right:0;">
+                            @Localizer["Subscribe Now"]
+                        </button>
+                    </form>
+
+                    @if (TempData["SubscribeMessage"] is string message)
+                    {
+                        <div class="alert @(TempData["SubscribeSuccess"] as bool? == true ? "alert-success" : "alert-danger") mt-2">
+                            @message
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-lg-6 col-xl-3">
+                <h4 class="mb-4 text-white">@Localizer["Get In Touch"]</h4>
+                @if (Model.ContactInfo is not null)
+                {
+                    <p class="text-secondary line-h">@Localizer["Address"]: <span class="text-white">@Model.ContactInfo.Address</span></p>
+                    <p class="text-secondary line-h">@Localizer["Email"]: <span class="text-white">@Model.ContactInfo.Email</span></p>
+                    <p class="text-secondary line-h">@Localizer["Phone"]: <span class="text-white">@Model.ContactInfo.Phone</span></p>
+                }
+                <div class="d-flex line-h">
+                    @foreach (var link in Model.SocialLinks)
+                    {
+                        <a class="btn btn-light me-2 btn-md-square rounded-circle" href="@link.Url" target="_blank" rel="noopener">
+                        @* <i class="@link.IconClass text-dark"></i>*@
+                        </a>
+                    }
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-xl-3">
+                <h4 class="mb-4 text-white">@Localizer["Recent Posts"]</h4>
+                @foreach (var post in Model.RecentPosts)
+                {
+                    <a asp-controller="Article" asp-action="Details" asp-route-slug="@post.Slug" class="text-decoration-none">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle border border-2 border-primary overflow-hidden" style="width:60px; height:60px;">
+                                <img src="@post.ImageUrl" class="img-fluid rounded-circle w-100" alt="@post.Title">
+                            </div>
+                            <div class="d-flex flex-column ps-4">
+                                <span class="h6 text-white mb-1">@post.Title</span>
+                                <small class="text-white d-block"><i class="fas fa-calendar-alt me-1"></i> @post.PublishedAt.ToString("MMM d, yyyy")</small>
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+
+            <div class="col-lg-6 col-xl-3">
+                <h4 class="mb-4 text-white">@Localizer["Categories"]</h4>
+                <div class="d-flex flex-column text-start">
+                    @foreach (var category in Model.Categories)
+                    {
+                        <a class="btn-link text-white" asp-controller="Category" asp-action="Index" asp-route-slug="@category.Slug">
+                            <i class="fas fa-angle-right text-white me-2"></i> @category.Name
+                        </a>
+                    }
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-xl-3">
+                <h4 class="mb-4 text-white">@Localizer["Our Gallery"]</h4>
+                <div class="row g-2">
+                    @foreach (var imageUrl in Model.GalleryImageUrls)
+                    {
+                        <div class="col-4">
+                            <div class="rounded overflow-hidden">
+                                <img src="@imageUrl" class="img-fluid rounded w-100" alt="">
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid copyright bg-dark py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                <span class="text-light">
+                    <i class="fas fa-copyright text-light me-2"></i>@Localizer["NewsHub"], @Localizer["All rights reserved."]
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

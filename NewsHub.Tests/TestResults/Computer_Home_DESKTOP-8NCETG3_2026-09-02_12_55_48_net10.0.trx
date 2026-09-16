@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="b8cea124-80c8-4795-9ac9-0908eeb9f0a2" name="Computer Home@DESKTOP-8NCETG3 2026-09-02 12:55:48" runUser="DESKTOP-8NCETG3\Computer Home" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-02T12:55:48.0762765+03:00" queuing="2026-09-02T12:55:48.0762769+03:00" start="2026-09-02T12:55:46.6673751+03:00" finish="2026-09-02T12:55:48.1026947+03:00" />
+  <TestSettings name="default" id="dfe67ad6-e5c2-429f-a0cf-208e54ae3695">
+    <Deployment runDeploymentRoot="Computer_Home_DESKTOP-8NCETG3_2026-09-02_12_55_48" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="d13c1c8c-1d2b-4786-acee-8696c9c077dc" testId="fd4dfa33-8e9e-2575-fbf9-bfa8976f7c9c" testName="NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenCategoryIdMissing_ReturnsFalse" computerName="DESKTOP-8NCETG3" duration="00:00:00.0006463" startTime="2026-09-02T12:55:47.9163995+03:00" endTime="2026-09-02T12:55:47.9164923+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d13c1c8c-1d2b-4786-acee-8696c9c077dc">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.False() Failure&#xD;
+Expected: False&#xD;
+Actual:   True</Message>
+          <StackTrace>   at NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenCategoryIdMissing_ReturnsFalse() in D:\C#\1\NewsHub\NewsHub\NewsHub.Tests\DomainTests\BusinessRulesTests\ArticlePublishingRulesTests.cs:line 68&#xD;
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a300bca4-f5d5-40b9-9cc4-d86154abff81" testId="2a518650-0784-4e59-8156-e3b3d6647fe4" testName="NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenAuthorIdMissing_ReturnsFalse" computerName="DESKTOP-8NCETG3" duration="00:00:00.0007270" startTime="2026-09-02T12:55:47.9141985+03:00" endTime="2026-09-02T12:55:47.9143612+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a300bca4-f5d5-40b9-9cc4-d86154abff81">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.False() Failure&#xD;
+Expected: False&#xD;
+Actual:   True</Message>
+          <StackTrace>   at NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenAuthorIdMissing_ReturnsFalse() in D:\C#\1\NewsHub\NewsHub\NewsHub.Tests\DomainTests\BusinessRulesTests\ArticlePublishingRulesTests.cs:line 88&#xD;
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="04a7a554-5939-465e-bd24-c8ba3d8a2f64" testId="f431f4e1-c893-b05f-9799-472c1adbad68" testName="NewsHub.Tests.UnitTest1.Test1" computerName="DESKTOP-8NCETG3" duration="00:00:00.0040777" startTime="2026-09-02T12:55:47.8641799+03:00" endTime="2026-09-02T12:55:47.8799062+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="04a7a554-5939-465e-bd24-c8ba3d8a2f64" />
+    <UnitTestResult executionId="610040ea-7296-4f63-835b-847236be58d1" testId="007152f5-ead9-6f00-028e-10d3953a15e4" testName="NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenAllRulesAreSatisfied_ReturnsTrue" computerName="DESKTOP-8NCETG3" duration="00:00:00.0073785" startTime="2026-09-02T12:55:47.8666325+03:00" endTime="2026-09-02T12:55:47.9039278+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="610040ea-7296-4f63-835b-847236be58d1">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.False() Failure&#xD;
+Expected: False&#xD;
+Actual:   True</Message>
+          <StackTrace>   at NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenAllRulesAreSatisfied_ReturnsTrue() in D:\C#\1\NewsHub\NewsHub\NewsHub.Tests\DomainTests\BusinessRulesTests\ArticlePublishingRulesTests.cs:line 129&#xD;
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="95e0b1e8-dbb7-4aeb-b2d1-26a5c7f1321a" testId="13f2b026-a861-005b-cf46-d29de395dfce" testName="NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenArabicTranslationMissing_ReturnsFalse" computerName="DESKTOP-8NCETG3" duration="00:00:00.0002772" startTime="2026-09-02T12:55:47.9209676+03:00" endTime="2026-09-02T12:55:47.9211049+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="95e0b1e8-dbb7-4aeb-b2d1-26a5c7f1321a">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.False() Failure&#xD;
+Expected: False&#xD;
+Actual:   True</Message>
+          <StackTrace>   at NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenArabicTranslationMissing_ReturnsFalse() in D:\C#\1\NewsHub\NewsHub\NewsHub.Tests\DomainTests\BusinessRulesTests\ArticlePublishingRulesTests.cs:line 28&#xD;
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c7ac6d54-d7ef-463e-8978-016cd7b8bd1c" testId="06320644-eada-8b75-1ec5-c1fa4567eba6" testName="NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenEnglishTranslationMissing_ReturnsFalse" computerName="DESKTOP-8NCETG3" duration="00:00:00.0007004" startTime="2026-09-02T12:55:47.9180349+03:00" endTime="2026-09-02T12:55:47.9181713+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c7ac6d54-d7ef-463e-8978-016cd7b8bd1c">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.False() Failure&#xD;
+Expected: False&#xD;
+Actual:   True</Message>
+          <StackTrace>   at NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenEnglishTranslationMissing_ReturnsFalse() in D:\C#\1\NewsHub\NewsHub\NewsHub.Tests\DomainTests\BusinessRulesTests\ArticlePublishingRulesTests.cs:line 48&#xD;
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8e6513d4-37d2-4d6c-ad4a-73f30609b2dc" testId="b91e1f6f-e2b1-26ea-3be9-fc49710d338a" testName="NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenImageUrlMissing_ReturnsFalse" computerName="DESKTOP-8NCETG3" duration="00:00:00.0003591" startTime="2026-09-02T12:55:47.9194756+03:00" endTime="2026-09-02T12:55:47.9195677+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8e6513d4-37d2-4d6c-ad4a-73f30609b2dc">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.False() Failure&#xD;
+Expected: False&#xD;
+Actual:   True</Message>
+          <StackTrace>   at NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenImageUrlMissing_ReturnsFalse() in D:\C#\1\NewsHub\NewsHub\NewsHub.Tests\DomainTests\BusinessRulesTests\ArticlePublishingRulesTests.cs:line 108&#xD;
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenEnglishTranslationMissing_ReturnsFalse" storage="d:\c#\1\newshub\newshub\newshub.tests\bin\debug\net10.0\newshub.tests.dll" id="06320644-eada-8b75-1ec5-c1fa4567eba6">
+      <Execution id="c7ac6d54-d7ef-463e-8978-016cd7b8bd1c" />
+      <TestMethod codeBase="D:\C#\1\NewsHub\NewsHub\NewsHub.Tests\bin\Debug\net10.0\NewsHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests" name="CanPublish_WhenEnglishTranslationMissing_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenAllRulesAreSatisfied_ReturnsTrue" storage="d:\c#\1\newshub\newshub\newshub.tests\bin\debug\net10.0\newshub.tests.dll" id="007152f5-ead9-6f00-028e-10d3953a15e4">
+      <Execution id="610040ea-7296-4f63-835b-847236be58d1" />
+      <TestMethod codeBase="D:\C#\1\NewsHub\NewsHub\NewsHub.Tests\bin\Debug\net10.0\NewsHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests" name="CanPublish_WhenAllRulesAreSatisfied_ReturnsTrue" />
+    </UnitTest>
+    <UnitTest name="NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenImageUrlMissing_ReturnsFalse" storage="d:\c#\1\newshub\newshub\newshub.tests\bin\debug\net10.0\newshub.tests.dll" id="b91e1f6f-e2b1-26ea-3be9-fc49710d338a">
+      <Execution id="8e6513d4-37d2-4d6c-ad4a-73f30609b2dc" />
+      <TestMethod codeBase="D:\C#\1\NewsHub\NewsHub\NewsHub.Tests\bin\Debug\net10.0\NewsHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests" name="CanPublish_WhenImageUrlMissing_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenArabicTranslationMissing_ReturnsFalse" storage="d:\c#\1\newshub\newshub\newshub.tests\bin\debug\net10.0\newshub.tests.dll" id="13f2b026-a861-005b-cf46-d29de395dfce">
+      <Execution id="95e0b1e8-dbb7-4aeb-b2d1-26a5c7f1321a" />
+      <TestMethod codeBase="D:\C#\1\NewsHub\NewsHub\NewsHub.Tests\bin\Debug\net10.0\NewsHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests" name="CanPublish_WhenArabicTranslationMissing_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenCategoryIdMissing_ReturnsFalse" storage="d:\c#\1\newshub\newshub\newshub.tests\bin\debug\net10.0\newshub.tests.dll" id="fd4dfa33-8e9e-2575-fbf9-bfa8976f7c9c">
+      <Execution id="d13c1c8c-1d2b-4786-acee-8696c9c077dc" />
+      <TestMethod codeBase="D:\C#\1\NewsHub\NewsHub\NewsHub.Tests\bin\Debug\net10.0\NewsHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests" name="CanPublish_WhenCategoryIdMissing_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="NewsHub.Tests.UnitTest1.Test1" storage="d:\c#\1\newshub\newshub\newshub.tests\bin\debug\net10.0\newshub.tests.dll" id="f431f4e1-c893-b05f-9799-472c1adbad68">
+      <Execution id="04a7a554-5939-465e-bd24-c8ba3d8a2f64" />
+      <TestMethod codeBase="D:\C#\1\NewsHub\NewsHub\NewsHub.Tests\bin\Debug\net10.0\NewsHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="NewsHub.Tests.UnitTest1" name="Test1" />
+    </UnitTest>
+    <UnitTest name="NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenAuthorIdMissing_ReturnsFalse" storage="d:\c#\1\newshub\newshub\newshub.tests\bin\debug\net10.0\newshub.tests.dll" id="2a518650-0784-4e59-8156-e3b3d6647fe4">
+      <Execution id="a300bca4-f5d5-40b9-9cc4-d86154abff81" />
+      <TestMethod codeBase="D:\C#\1\NewsHub\NewsHub\NewsHub.Tests\bin\Debug\net10.0\NewsHub.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests" name="CanPublish_WhenAuthorIdMissing_ReturnsFalse" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="fd4dfa33-8e9e-2575-fbf9-bfa8976f7c9c" executionId="d13c1c8c-1d2b-4786-acee-8696c9c077dc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2a518650-0784-4e59-8156-e3b3d6647fe4" executionId="a300bca4-f5d5-40b9-9cc4-d86154abff81" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f431f4e1-c893-b05f-9799-472c1adbad68" executionId="04a7a554-5939-465e-bd24-c8ba3d8a2f64" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="007152f5-ead9-6f00-028e-10d3953a15e4" executionId="610040ea-7296-4f63-835b-847236be58d1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="13f2b026-a861-005b-cf46-d29de395dfce" executionId="95e0b1e8-dbb7-4aeb-b2d1-26a5c7f1321a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="06320644-eada-8b75-1ec5-c1fa4567eba6" executionId="c7ac6d54-d7ef-463e-8978-016cd7b8bd1c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b91e1f6f-e2b1-26ea-3be9-fc49710d338a" executionId="8e6513d4-37d2-4d6c-ad4a-73f30609b2dc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="7" executed="7" passed="1" failed="6" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v4.0.0+05679a7ab5 (64-bit .NET 10.0.9)&#xD;
+[xUnit.net 00:00:00.12]   Discovering: NewsHub.Tests&#xD;
+[xUnit.net 00:00:00.22]   Discovered:  NewsHub.Tests&#xD;
+[xUnit.net 00:00:00.27]   Starting:    NewsHub.Tests&#xD;
+[xUnit.net 00:00:00.36]       Assert.False() Failure&#xD;
+[xUnit.net 00:00:00.36]       Expected: False&#xD;
+[xUnit.net 00:00:00.36]       Actual:   True&#xD;
+[xUnit.net 00:00:00.36]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.36]         D:\C#\1\NewsHub\NewsHub\NewsHub.Tests\DomainTests\BusinessRulesTests\ArticlePublishingRulesTests.cs(129,0): at NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenAllRulesAreSatisfied_ReturnsTrue()&#xD;
+[xUnit.net 00:00:00.36]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+[xUnit.net 00:00:00.36]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+[xUnit.net 00:00:00.37]       Assert.False() Failure&#xD;
+[xUnit.net 00:00:00.37]       Expected: False&#xD;
+[xUnit.net 00:00:00.37]       Actual:   True&#xD;
+[xUnit.net 00:00:00.37]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.37]         D:\C#\1\NewsHub\NewsHub\NewsHub.Tests\DomainTests\BusinessRulesTests\ArticlePublishingRulesTests.cs(88,0): at NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenAuthorIdMissing_ReturnsFalse()&#xD;
+[xUnit.net 00:00:00.37]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+[xUnit.net 00:00:00.37]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+[xUnit.net 00:00:00.37]       Assert.False() Failure&#xD;
+[xUnit.net 00:00:00.37]       Expected: False&#xD;
+[xUnit.net 00:00:00.37]       Actual:   True&#xD;
+[xUnit.net 00:00:00.37]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.37]         D:\C#\1\NewsHub\NewsHub\NewsHub.Tests\DomainTests\BusinessRulesTests\ArticlePublishingRulesTests.cs(68,0): at NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenCategoryIdMissing_ReturnsFalse()&#xD;
+[xUnit.net 00:00:00.37]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+[xUnit.net 00:00:00.37]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+[xUnit.net 00:00:00.37]       Assert.False() Failure&#xD;
+[xUnit.net 00:00:00.37]       Expected: False&#xD;
+[xUnit.net 00:00:00.37]       Actual:   True&#xD;
+[xUnit.net 00:00:00.37]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.37]         D:\C#\1\NewsHub\NewsHub\NewsHub.Tests\DomainTests\BusinessRulesTests\ArticlePublishingRulesTests.cs(48,0): at NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenEnglishTranslationMissing_ReturnsFalse()&#xD;
+[xUnit.net 00:00:00.37]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+[xUnit.net 00:00:00.37]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+[xUnit.net 00:00:00.37]       Assert.False() Failure&#xD;
+[xUnit.net 00:00:00.37]       Expected: False&#xD;
+[xUnit.net 00:00:00.37]       Actual:   True&#xD;
+[xUnit.net 00:00:00.37]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.37]         D:\C#\1\NewsHub\NewsHub\NewsHub.Tests\DomainTests\BusinessRulesTests\ArticlePublishingRulesTests.cs(108,0): at NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenImageUrlMissing_ReturnsFalse()&#xD;
+[xUnit.net 00:00:00.37]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+[xUnit.net 00:00:00.37]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+[xUnit.net 00:00:00.37]       Assert.False() Failure&#xD;
+[xUnit.net 00:00:00.37]       Expected: False&#xD;
+[xUnit.net 00:00:00.37]       Actual:   True&#xD;
+[xUnit.net 00:00:00.37]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.37]         D:\C#\1\NewsHub\NewsHub\NewsHub.Tests\DomainTests\BusinessRulesTests\ArticlePublishingRulesTests.cs(28,0): at NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenArabicTranslationMissing_ReturnsFalse()&#xD;
+[xUnit.net 00:00:00.37]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+[xUnit.net 00:00:00.37]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+[xUnit.net 00:00:00.38]   Finished:    NewsHub.Tests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="DESKTOP-8NCETG3" outcome="Error" timestamp="2026-09-02T12:55:47.9083222+03:00">
+        <Text>[xUnit.net 00:00:00.36]     NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenAllRulesAreSatisfied_ReturnsTrue [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-8NCETG3" outcome="Error" timestamp="2026-09-02T12:55:47.9150220+03:00">
+        <Text>[xUnit.net 00:00:00.37]     NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenAuthorIdMissing_ReturnsFalse [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-8NCETG3" outcome="Error" timestamp="2026-09-02T12:55:47.9169018+03:00">
+        <Text>[xUnit.net 00:00:00.37]     NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenCategoryIdMissing_ReturnsFalse [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-8NCETG3" outcome="Error" timestamp="2026-09-02T12:55:47.9186720+03:00">
+        <Text>[xUnit.net 00:00:00.37]     NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenEnglishTranslationMissing_ReturnsFalse [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-8NCETG3" outcome="Error" timestamp="2026-09-02T12:55:47.9198582+03:00">
+        <Text>[xUnit.net 00:00:00.37]     NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenImageUrlMissing_ReturnsFalse [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-8NCETG3" outcome="Error" timestamp="2026-09-02T12:55:47.9215001+03:00">
+        <Text>[xUnit.net 00:00:00.37]     NewsHub.Tests.DomainTests.BusinessRulesTests.ArticlePublishingRulesTests.CanPublish_WhenArabicTranslationMissing_ReturnsFalse [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

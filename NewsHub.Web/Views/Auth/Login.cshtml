@@ -1,0 +1,54 @@
+﻿@using NewsHub.Web.Resources
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
+@model NewsHub.Web.Models.Auth.LoginViewModel
+@{
+    ViewData["Title"] = Localizer["Sign in"];
+}
+
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="bg-light rounded p-5">
+                    <h1 class="mb-4">@Localizer["Sign in"]</h1>
+
+                    @if (TempData["AuthMessage"] is string authMessage)
+                    {
+                        <div class="bg-white rounded p-3 mb-4 border-start border-primary border-4">@authMessage</div>
+                    }
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <form asp-controller="Auth" asp-action="Login" method="post">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" asp-for="ReturnUrl" />
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <input asp-for="Email" class="w-100 form-control border-0 py-3" placeholder="@Localizer["Email"]">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="col-12">
+                                <input asp-for="Password" class="w-100 form-control border-0 py-3" placeholder="@Localizer["Password"]">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="col-12 d-flex justify-content-between align-items-center">
+                                <div class="form-check">
+                                    <input asp-for="RememberMe" class="form-check-input" />
+                                    <label asp-for="RememberMe" class="form-check-label">@Localizer["Remember Me"]</label>
+                                </div>
+                                <a asp-controller="Auth" asp-action="ForgotPassword">@Localizer["Forgot Password?"]</a>
+                            </div>
+                            <div class="col-12">
+                                <button class="w-100 btn btn-primary form-control py-3" type="submit">@Localizer["Sign in"]</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <p class="mt-4 mb-0 text-body">
+                        @Localizer["Don't have an account?"] <a asp-controller="Auth" asp-action="Register">@Localizer["Create one"]</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

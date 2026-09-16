@@ -1,0 +1,206 @@
+﻿@using NewsHub.Web.Resources
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
+@model NewsHub.Web.Models.Article.ArticleDetailsViewModel
+@{
+    ViewData["Title"] = Model.Article.Title;
+    ViewData["MetaDescription"] = Model.Article.MetaDescription;
+}
+
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row g-4">
+
+            @* ---------- Main column ---------- *@
+            <div class="col-lg-8 col-xl-9 mt-0">
+
+                @* Hero — same treatment as the homepage lead article *@
+                <div class="position-relative overflow-hidden rounded">
+                    <img src="@Model.Article.ImageUrl" class="img-fluid rounded img-zoomin w-100" alt="@Model.Article.Title">
+                    <div class="d-flex justify-content-center px-4 position-absolute flex-wrap" style="bottom: 10px; left: 0;">
+                        <span class="text-white me-3"><i class="fa fa-eye"></i> @Model.Article.ViewCount.ToString("N0") @Localizer["Views"]</span>
+                        <span class="text-white"><i class="fa fa-comment-dots"></i> @Model.Article.CommentCount @Localizer["Comments"]</span>
+                    </div>
+                </div>
+
+                <div class="border-bottom py-3">
+                    <span class="display-4 text-dark mb-0 d-block">@Model.Article.Title</span>
+                    <small class="text-body d-block mt-2">
+                        <i class="fas fa-calendar-alt me-1"></i> @Model.Article.PublishedAt.ToString("MMMM d, yyyy")
+                    </small>
+                </div>
+
+                @if (!string.IsNullOrWhiteSpace(Model.Article.Excerpt))
+                {
+                    <p class="mt-3 mb-4 fs-5 fst-italic">@Model.Article.Excerpt</p>
+                }
+
+                @* Body copy relies on style.css's base <p>/<h*> rules — no component class needed *@
+                <div class="mb-4">
+                    @Html.Raw(Model.Article.Content)
+                </div>
+
+                @if (Model.Article.TagNames.Any())
+                {
+                    <ul class="nav nav-pills d-inline-flex text-center mb-4">
+                        @foreach (var tag in Model.Article.TagNames)
+                        {
+                            <li class="nav-item mb-3">
+                                <span class="d-flex py-2 bg-light rounded-pill me-2">
+                                    <span class="text-dark px-3">@tag</span>
+                                </span>
+                            </li>
+                        }
+                    </ul>
+                }
+
+                @if (TempData["InteractionSuccess"] is string successMessage)
+                {
+                    <div class="bg-light rounded p-3 mb-4 border-start border-primary border-4">@successMessage</div>
+                }
+                @if (TempData["InteractionError"] is string errorMessage)
+                {
+                    <div class="bg-light rounded p-3 mb-4 border-start border-danger border-4">@errorMessage</div>
+                }
+
+                @* ---------- Rate box — same shell as the homepage "Top Story" panel ---------- *@
+                <div class="bg-light p-4 rounded mb-4">
+                    <h3 class="mb-4">@Localizer["Rate this article"]</h3>
+                    @if (Model.CanInteract)
+                    {
+                        <form asp-controller="Article" asp-action="Rate" asp-route-slug="@Model.Article.Slug"
+                              method="post" class="d-flex align-items-center gap-3">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" asp-for="RatingForm.ArticleId" />
+                            <select asp-for="RatingForm.Value" class="form-select border-0 py-3 w-auto">
+                                <option value="5">5 — @Localizer["Excellent"]</option>
+                                <option value="4">4 — @Localizer["Good"]</option>
+                                <option value="3">3 — @Localizer["Average"]</option>
+                                <option value="2">2 — @Localizer["Poor"]</option>
+                                <option value="1">1 — @Localizer["Very poor"]</option>
+                            </select>
+                            <button type="submit" class="btn btn-primary rounded-pill px-5 py-3">@Localizer["Submit rating"]</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <p class="mb-0 text-body">@Localizer["Sign in to rate this article."]</p>
+                    }
+                </div>
+
+                @* ---------- Comments — sidebar-box shell, features-item rows for each comment ---------- *@
+                <div class="bg-light rounded p-4 pt-4 mb-4">
+                    <h3 class="mb-4">@Localizer["Comments"] (@Model.Comments.Count())</h3>
+
+                    @if (!Model.Comments.Any())
+                    {
+                        <p class="text-body mb-0">@Localizer["No comments yet — be the first to say something."]</p>
+                    }
+                    else
+                    {
+                        <div class="row g-4">
+                            @foreach (var comment in Model.Comments)
+                            {
+                                <div class="col-12">
+                                    <div class="row g-3 align-items-start features-item">
+                                        <div class="col-auto">
+                                            <span class="rounded-circle btn-sm-square bg-primary d-flex align-items-center justify-content-center" style="width: 42px; height: 42px;">
+                                                <i class="fas fa-user text-white"></i>
+                                            </span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="d-flex justify-content-between">
+                                                <strong>@Localizer["Reader"]</strong>
+                                                <small class="text-body">@comment.CreatedAt.ToString("MMM d, yyyy 'at' h:mm tt")</small>
+                                            </div>
+                                            <p class="mb-0 mt-1">@comment.Content</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+
+                @* ---------- Comment form — same input treatment as the Contact form ---------- *@
+                <div class="bg-light p-4 rounded">
+                    <h3 class="mb-4">@Localizer["Leave a comment"]</h3>
+                    @if (Model.CanInteract)
+                    {
+                        <form asp-controller="Article" asp-action="AddComment" asp-route-slug="@Model.Article.Slug" method="post">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="ArticleId" value="@Model.Article.Id" />
+                            <div class="row g-4">
+                                <div class="col-12">
+                                    <textarea name="Content" class="w-100 form-control border-0 py-3" rows="4" placeholder="@Localizer["Your comment"]"></textarea>
+                                    <span asp-validation-for="CommentForm.Content" class="text-danger"></span>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="w-100 btn btn-primary form-control py-3">@Localizer["Post comment"]</button>
+                                </div>
+                            </div>
+                        </form>
+                    }
+                    else
+                    {
+                        <p class="mb-0 text-body">@Localizer["Sign in to leave a comment."]</p>
+                    }
+                </div>
+            </div>
+
+            @* ---------- Sidebar — identical shell + markup to the Home sidebar ---------- *@
+            <div class="col-lg-4 col-xl-3">
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="p-3 rounded border">
+                            @if (Model.PopularNews.Any())
+                            {
+                                <h4 class="mb-4">@Localizer["Popular News"]</h4>
+                                <div class="row g-4">
+                                    @foreach (var article in Model.PopularNews)
+                                    {
+                                        <div class="col-12">
+                                            <div class="row g-4 align-items-center features-item">
+                                                <div class="col-4">
+                                                    <div class="overflow-hidden rounded-circle">
+                                                        <img src="@article.ImageUrl" class="img-zoomin img-fluid rounded-circle w-100" alt="@article.Title">
+                                                    </div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="features-content d-flex flex-column">
+                                                        <a asp-controller="Article" asp-action="Details" asp-route-slug="@article.Slug"
+                                                           class="h6">@article.Title</a>
+                                                        <small class="text-body d-block">
+                                                            <i class="fas fa-star text-primary me-1"></i> @article.AverageRating.ToString("0.0") / 5
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            }
+
+                            @if (Model.TrendingTags.Any())
+                            {
+                                <div class="border-bottom my-3 pb-3">
+                                    <h4 class="mb-0">@Localizer["Trending Tags"]</h4>
+                                </div>
+                                <ul class="nav nav-pills d-inline-flex text-center mb-0">
+                                    @foreach (var tag in Model.TrendingTags)
+                                    {
+                                        <li class="nav-item mb-3">
+                                            <a class="d-flex py-2 bg-light rounded-pill me-2"
+                                               href="#">
+                                                <span class="text-dark link-hover px-3">@tag.Name</span>
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,134 @@
+﻿@model NewsHub.Web.Areas.Admin.ViewModels.SiteSettings.SiteSettingFormViewModel
+@using NewsHub.Application.Admin.DTOs.SocialLinks
+
+@{
+    ViewData["Title"] = "Site Settings";
+    var links = ViewData["SocialLinks"] as List<SocialLinkAdminDto> ?? new();
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<div class="card mb-4">
+    <div class="card-header">
+        <h5 class="mb-0">@Localizer["Contact Settings"]</h5>
+    </div>
+    <div class="card-body">
+        <form asp-action="UpdateSettings" method="post">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger d-none" id="validationSummary"></div>
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+            }
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" asp-for="ContactEmail">@Localizer["Email"]</label>
+                <div class="col-sm-10">
+                    <input asp-for="ContactEmail" class="form-control" />
+                    <span asp-validation-for="ContactEmail" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" asp-for="ContactPhone">@Localizer["Phone"]</label>
+                <div class="col-sm-10">
+                    <input asp-for="ContactPhone" class="form-control" />
+                    <span asp-validation-for="ContactPhone" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" asp-for="ContactAddress">@Localizer["Address"]</label>
+                <div class="col-sm-10">
+                    <textarea asp-for="ContactAddress" class="form-control"></textarea>
+                    <span asp-validation-for="ContactAddress" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row justify-content-end">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">@Localizer["Save"]</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header d-flex align-items-center justify-content-between">
+        <h5 class="mb-0">@Localizer["Social Links"]</h5>
+        <a asp-action="CreateSocialLink" class="btn btn-primary btn-sm">
+            <i class="bx bx-plus"></i> @Localizer["Add"] @Localizer["Social Links"]
+        </a>
+    </div>
+
+    <div class="table-responsive text-nowrap">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>@Localizer["Order"]</th>
+                    <th>@Localizer["Platform"]</th>
+                    <th>@Localizer["URL"]</th>
+                    <th>@Localizer["Status"]</th>
+                    <th>@Localizer["Actions"]</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var link in links)
+                {
+                    <tr>
+                        <td>@link.DisplayOrder</td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(link.IconClass))
+                            {
+                                <i class="bx @link.IconClass me-1"></i>
+                            }
+                            <strong>@link.Platform</strong>
+                        </td>
+                        <td class="text-truncate" style="max-width:250px;">
+                            <a href="@link.Url" target="_blank">@link.Url</a>
+                        </td>
+                        <td>
+                            @if (link.IsActive)
+                            {
+                                <span class="badge bg-label-success">Active</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-label-secondary">Inactive</span>
+                            }
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" asp-action="EditSocialLink" asp-route-id="@link.Id">
+                                        <i class="bx bx-edit-alt me-1"></i> @Localizer["Edit"]
+                                    </a>
+                                    <form asp-action="DeleteSocialLink" asp-route-id="@link.Id" method="post"
+                                          onsubmit="return confirm('Delete this social link?');">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="dropdown-item">
+                                            <i class="bx bx-trash me-1"></i> @Localizer["Delete"]
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,32 @@
+﻿@model NewsHub.Web.Models.Article.ArticleListViewModel
+@{
+    ViewData["Title"] = Model.Heading;
+}
+
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="border-bottom mb-4">
+            <h1 class="mb-4">@Model.Heading</h1>
+        </div>
+
+        @if (!Model.Result.Items.Any())
+        {
+            <p class="text-body">
+                @(Model.SearchTerm is null ? "No articles published yet." : "No articles matched your search.")
+            </p>
+        }
+        else
+        {
+            <div class="row g-4">
+                @foreach (var article in Model.Result.Items)
+                {
+                    <div class="col-md-6 col-lg-4">
+                        <partial name="_ArticleCard" model="article" />
+                    </div>
+                }
+            </div>
+        }
+
+        <partial name="_Pagination" model="Model.Pagination" />
+    </div>
+</div>
