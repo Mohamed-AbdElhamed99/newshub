@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NewsHub.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d1c00cc76c28cba91e70639f25e94f3b25fe83d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e2177d64559727f001c846868437c674965e7b2c")]
 [assembly: System.Reflection.AssemblyProductAttribute("NewsHub.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NewsHub.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

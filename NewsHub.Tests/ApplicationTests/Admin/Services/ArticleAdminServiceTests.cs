@@ -1,4 +1,6 @@
-﻿namespace NewsHub.Tests.ApplicationTests.Admin.Services;
+﻿using Hangfire;
+
+namespace NewsHub.Tests.ApplicationTests.Admin.Services;
 
 using System.Globalization;
 using Moq;
@@ -12,11 +14,12 @@ public class ArticleAdminServiceTests
 {
     private readonly Mock<IArticleRepository> _mockArticleRepository;
     private readonly ArticleAdminService _service;
+    private readonly Mock<IBackgroundJobClient> _mockBackgroundJobClient = new();
 
     public ArticleAdminServiceTests()
     {   
         _mockArticleRepository = new Mock<IArticleRepository>();
-        _service = new ArticleAdminService(_mockArticleRepository.Object);
+        _service = new ArticleAdminService(_mockArticleRepository.Object, _mockBackgroundJobClient.Object);
     }
 
     // ---------------------------------------------------------------

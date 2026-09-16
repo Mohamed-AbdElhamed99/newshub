@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NewsHub.Web")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute(" ")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9cccfcdc629d2d9ea207315beea13c47c137e27")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e2177d64559727f001c846868437c674965e7b2c")]
 [assembly: System.Reflection.AssemblyProductAttribute("NewsHub.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NewsHub.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
