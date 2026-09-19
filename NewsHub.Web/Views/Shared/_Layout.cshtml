@@ -42,50 +42,59 @@
 
     <!-- Navbar start -->
     <div class="container-fluid sticky-top px-0">
-        <div class="container-fluid topbar bg-dark d-none d-lg-block">
-            <div class="container px-0">
-                <div class="topbar-top d-flex justify-content-between">
-                    @await Component.InvokeAsync("TrendingTicker")
-                    <div class="top-link flex-lg-wrap">
-                        <i class="fas fa-calendar-alt text-white border-end border-secondary pe-2 me-2">
-                            <span class="text-body">@DateTime.UtcNow.ToString("dddd, MMM d, yyyy")</span>
-                        </i>
+        <div class="container-fluid topbar bg-dark">
+    <div class="container px-0">
+        <div class="topbar-top d-flex align-items-center justify-content-end justify-content-lg-between py-1 px-2 px-lg-0">
+
+            <!-- Ticker: desktop only -->
+            <div class="d-none d-lg-block">
+                @await Component.InvokeAsync("TrendingTicker")
+            </div>
+
+            <!-- Date: desktop only -->
+            <div class="top-link d-none d-lg-flex flex-lg-wrap">
+                <i class="fas fa-calendar-alt text-white border-end border-secondary pe-2 me-2">
+                    <span class="text-body">@DateTime.UtcNow.ToString("dddd, MMM d, yyyy")</span>
+                </i>
+            </div>
+
+            <!-- Language + Auth: always visible -->
+            <div class="d-flex align-items-center flex-shrink-0 gap-3">
+                <partial name="Components/_LanguageSwitcher" />
+
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                           id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle me-2"></i>
+                            <span class="d-none d-sm-inline">@User.Identity.Name</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                            <li>
+                                <form asp-controller="Auth" asp-action="Logout" method="post" class="m-0">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="dropdown-item">
+                                        <i class="fas fa-sign-out-alt me-2"></i>@Localizer["Log Out"]
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="d-flex align-items-center flex-shrink-0">
-                        <partial name="Components/_LanguageSwitcher" />
-                        @if (User.Identity?.IsAuthenticated == true)
-                        {
-                            <div class="dropdown">
-                                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                                   id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fas fa-user-circle me-2"></i>
-                                    <span>@User.Identity.Name</span>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
-                                    <li>
-                                        <form asp-controller="Auth" asp-action="Logout" method="post" class="m-0">
-                                            @Html.AntiForgeryToken()
-                                            <button type="submit" class="dropdown-item">
-                                                <i class="fas fa-sign-out-alt me-2"></i>@Localizer["Log Out"]
-                                            </button>
-                                        </form>
-                                    </li>
-                                </ul>
-                            </div>
-                        }
-                        else
-                        {
-                            <a asp-controller="Auth" asp-action="Login" class="text-white text-decoration-none me-3">
-                                <i class="fas fa-sign-in-alt me-1"></i>@Localizer["Sign in"]
-                            </a>
-                            <a asp-controller="Auth" asp-action="Register" class="text-white text-decoration-none">
-                                <i class="fas fa-user-plus me-1"></i>@Localizer["Register"]
-                            </a>
-                        }
-                    </div>
-                </div>
+                }
+                else
+                {
+                    <a asp-controller="Auth" asp-action="Login" class="text-white text-decoration-none">
+                        <i class="fas fa-sign-in-alt me-1"></i>@Localizer["Sign in"]
+                    </a>
+                    <a asp-controller="Auth" asp-action="Register" class="text-white text-decoration-none">
+                        <i class="fas fa-user-plus me-1"></i>@Localizer["Register"]
+                    </a>
+                }
             </div>
         </div>
+    </div>
+</div>
         <div class="container-fluid bg-light">
             <div class="container px-0">
                 <nav class="navbar navbar-light navbar-expand-xl">

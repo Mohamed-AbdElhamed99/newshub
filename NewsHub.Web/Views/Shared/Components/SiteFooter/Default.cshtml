@@ -1,4 +1,5 @@
-﻿@using NewsHub.Web.Models.Shared
+﻿@using Microsoft.AspNetCore.Http.Extensions
+@using NewsHub.Web.Models.Shared
 @using NewsHub.Web.Resources
 @model FooterViewModel
 
@@ -15,7 +16,7 @@
                     <form asp-controller="Subscription" asp-action="Subscribe" method="post"
                           class="d-flex position-relative rounded-pill overflow-hidden">
                         @Html.AntiForgeryToken()
-                        <input type="hidden" name="returnUrl" value="@Context.Request.Path" />
+                        <input type="hidden" name="returnUrl" value="@Context.Request.GetEncodedPathAndQuery()" />
                         <input name="email" class="form-control border-0 w-100 py-3 rounded-pill" type="email"
                                placeholder="you@example.com" required>
                         <button type="submit" class="btn btn-primary border-0 py-3 px-5 rounded-pill text-white position-absolute" style="top:0; right:0;">
